@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 const Slider = ({ children }) => {
 
     const duplicatedSlides = [...children, ...children];
-    const containerLength = children.length * 30;
+    const containerLength = children.length * 25;
 
     return (
         <div style={{

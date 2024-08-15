@@ -9,12 +9,6 @@ import Testimonial from "@/components/Testimonial/Testimonial";
 import Video from "@/components/Video/Video";
 
 export default function Home() {
-  //TO DO:
-  //Align text
-  //Hero absolute
-  //Align header
-  //Footer inset
-
   return (
     <main className="flex min-h-screen flex-col items-center bg-background rounded-b-3xl gap-32 pb-32 pt-8 px-32">
       <div className="grid place-items-center place-content-center gap-16">
