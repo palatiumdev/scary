@@ -16,7 +16,7 @@ export default function Home() {
   //Footer inset
 
   return (
-    <main className="flex min-h-screen flex-col items-center bg-background grainy rounded-b-3xl gap-32 pb-32 pt-8 px-32">
+    <main className="flex min-h-screen flex-col items-center bg-background rounded-b-3xl gap-32 pb-32 pt-8 px-32">
       <div className="grid place-items-center place-content-center gap-16">
         <Header />
         <Hero />
@@ -27,7 +27,6 @@ export default function Home() {
             <Creator channelId={"UCTs5PJGf9AwnA7mNV3ejNTQ"} />
             <Creator channelId={"UCragU9SBVhC3bhv2Qv4JuHA"} />
             <Creator channelId={"UCTs5PJGf9AwnA7mNV3ejNTQ"} />
-
           </Slider>
         </div>
       </div>
