@@ -1,7 +1,10 @@
-import { Inter } from "next/font/google";
-import "./globals.css";
+import localFont from 'next/font/local';
 
-const inter = Inter({ subsets: ["latin"] });
+import "@/Styles/globals.css";
+import Footer from "@/components/Footer/Footer";
+
+const tommy = localFont({ src: '../public/Tommy.woff2', variable: "--font-tommy" });
+const regular = localFont({ src: '../public/Regular.woff', variable: "--font-regular" });
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +14,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${tommy.variable} ${regular.variable} font-sans bg-BGaccent  text-white`} >
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
