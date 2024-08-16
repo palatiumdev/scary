@@ -26,7 +26,6 @@ export default function Home() {
       </div>
 
       <div className="grid place-items-center gap-16 w-full">
-        <h1 className="text-5xl font-extrabold">Work</h1>
         <div className="grid grid-cols-2 place-items-center gap-16 w-full">
           <div className="w-full">
             <Video videoId={"bHxgNeEwX_g"} />
@@ -60,8 +59,10 @@ export default function Home() {
         </div>
 
       </div>
+
+      <div className="border-white border-2 rounded-3xl w-96"></div>
+
       <div className="w-full flex flex-col place-items-center gap-16">
-        <h1 className="text-5xl font-extrabold">Shorts</h1>
         <Shorts />
       </div>
 
