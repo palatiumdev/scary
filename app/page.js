@@ -57,17 +57,7 @@ export default function Home() {
             <Video videoId={"XLDb6T4yNYE"} />
           </div>
         </div>
-
       </div>
-
-      <div className="border-white border-2 rounded-3xl w-96"></div>
-
-      <div className="w-full flex flex-col place-items-center gap-16">
-        <Shorts />
-      </div>
-
-      <ContactText />
-
     </main >
   );
 }

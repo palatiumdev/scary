@@ -1,3 +1,4 @@
+import Shorts from "../Carousel/Shorts"
 import Scene from "../Scene/Scene"
 
 const Footer = () => {
