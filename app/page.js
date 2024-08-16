@@ -47,7 +47,7 @@ export default function Home() {
             <Video videoId={"zphXiIFR2Kg"} />
           </div>
           <div className="w-full grid place-content-center">
-            <Testimonial channelId={"UCztkgeXgMW_kIEa1wE1AecA"} testimonial={"That was amazing GREAT WORK MY MAN. Will def be coming back for more long/short content."} />
+            <Testimonial channelId={"UCztkgeXgMW_kIEa1wE1AecA"} testimonial={"Bro.... I love it, Great job man like honestly"} />
           </div>
 
 

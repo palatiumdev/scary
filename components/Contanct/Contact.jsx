@@ -19,7 +19,7 @@ const Contact = ({ icon, action, enableAnimation = false }) => {
             <AnimatePresence>
                 {copied && enableAnimation &&
                     (<motion.p
-                        className=" absolute -bottom-5 bg-primary p-1 px-2 rounded-3xl"
+                        className=" absolute -bottom-5 bg-primary p-1 px-2 rounded-lg"
                         initial={{
                             opacity: 0,
                         }}

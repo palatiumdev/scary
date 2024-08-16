@@ -14,7 +14,7 @@ const Header = () => {
 
             <div className="flex-1 flex justify-end">
                 <button className="bg-primary h-fit rounded-2xl font-extrabold text-2xl py-3 px-6" onClick={() => { window.open("https://x.com/vfxpjb", "_blank") }}>
-                    Send me a DM
+                    Work with me
                 </button>
             </div>
         </div>
