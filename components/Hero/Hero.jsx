@@ -8,7 +8,7 @@ const Hero = () => {
                 <h1 className="text-6xl font-extrabold z-20">Level Up Your Editing Game 🚀</h1>
                 <Button text={"Send me a DM"} />
             </div>
-            <div className="absolute size-full bg-background/50"></div>
+            <div className="absolute size-full bg-background/80"></div>
 
             <video autoPlay muted loop className="h-full w-screen">
                 <source src="movie.mp4" type="video/mp4" />
@@ -17,9 +17,5 @@ const Hero = () => {
         </div>
     )
 }
-
-/*
-
-*/
 
 export default Hero

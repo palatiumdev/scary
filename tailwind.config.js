@@ -10,7 +10,7 @@ module.exports = {
       colors: {
         background: "#0F0F0F",
         BGaccent: "#0A0909",
-        accent: "#4B4B4B",
+        accent: "#0A0909",
         primary: "#0289F5",
       },
       fontFamily: {

@@ -8,18 +8,18 @@ const Contact = ({ icon, action, enableAnimation = false }) => {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            setIsEnabled(false)
+            setCopied(false)
         }, 1500)
         return () => clearTimeout(timer)
     }, [copied])
 
     return (
-        <div className="relative grid place-items-center">
-            <IoIosMail size={35} onClick={() => { action(); setCopied(true) }} className="cursor-pointer" />
+        <button className="relative grid place-items-center" onClick={() => { action(); setCopied(true) }}>
+            {icon}
             <AnimatePresence>
                 {copied && enableAnimation &&
                     (<motion.p
-                        className=" absolute -bottom-5"
+                        className=" absolute -bottom-5 bg-primary p-1 px-2 rounded-3xl"
                         initial={{
                             opacity: 0,
                         }}
@@ -36,7 +36,7 @@ const Contact = ({ icon, action, enableAnimation = false }) => {
                     </motion.p>)}
             </AnimatePresence>
 
-        </div>
+        </button>
 
     )
 }
