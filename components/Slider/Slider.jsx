@@ -6,13 +6,13 @@ import { motion } from 'framer-motion';
 const Slider = ({ children }) => {
 
     const duplicatedSlides = [...children, ...children];
-    const containerLength = children.length * 25;
+    const containerLength = children.length * 30;
 
     return (
         <div style={{
             width: `${containerLength}rem`,
         }}>
-            <div className="relative w-full">
+            <div className="relative w-full overflow-hidden">
                 <motion.div
                     className="flex"
                     animate={{

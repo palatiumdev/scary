@@ -7,6 +7,7 @@ import Hero from "@/components/Hero/Hero";
 import Slider from "@/components/Slider/Slider";
 import Testimonial from "@/components/Testimonial/Testimonial";
 import Video from "@/components/Video/Video";
+import VideoTestimonial from "@/components/VideoTestimonial/VideoTestimonial";
 
 import { getHome } from "@/sanity/sanity-utils";
 
@@ -15,7 +16,7 @@ export default async function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center">
-      <div className="flex min-h-screen flex-col items-center bg-background rounded-b-3xl gap-32 pb-32 pt-8 px-10 lg:px-32">
+      <div className="flex min-h-screen flex-col items-center bg-background rounded-b-3xl gap-32 pb-32 pt-8 px-5 lg:px-32">
         <div className="flex flex-col items-center gap-16 w-full">
           <Header
             profile={home[0].profile}
@@ -26,11 +27,8 @@ export default async function Home() {
             heroButtonText={home[0].heroButtonText}
             heroVideo={home[0].heroVideoUrl}
           />
-          <div
-            className="w-full overflow-clip"
-            style={{ maskImage: 'linear-gradient(to right, transparent, black, transparent)' }}
-          >
-            <Slider>
+          <div className="w-[80vw] overflow-clip" style={{ maskImage: 'linear-gradient(to right, transparent, black, black, transparent)', }}>
+            <Slider className="overflow-clip">
               {home[0].creators.map((creator, i) => (
                 <Creator channelId={creator.channelId} key={i} />
               ))}
@@ -39,19 +37,7 @@ export default async function Home() {
         </div>
 
         <div className="grid place-items-center gap-16 w-full">
-          {home[0].videos.map((video, i) => (
-            <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center gap-16 w-full" key={i}>
-              <div className="w-full" style={{ order: `${i % 2 === 1 ? 0 : 1}` }}>
-                <Video videoId={video.videoId} />
-              </div>
-              <div className="w-full grid place-content-center">
-                <Testimonial
-                  channelId={video.channelId}
-                  testimonial={video.testimonial}
-                />
-              </div>
-            </div>
-          ))}
+          <VideoTestimonial videos={home[0].videos} />
         </div>
       </div>
 
