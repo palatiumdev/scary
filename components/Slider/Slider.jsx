@@ -12,7 +12,7 @@ const Slider = ({ children }) => {
         <div style={{
             width: `${containerLength}rem`,
         }}>
-            <div className="relative w-full overflow-hidden">
+            <div className="relative w-full">
                 <motion.div
                     className="flex"
                     animate={{

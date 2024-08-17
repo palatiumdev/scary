@@ -18,15 +18,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${tommy.variable} ${regular.variable} font-sans bg-BGaccent  text-white`} >
         {children}
-        <div className='flex flex-col gap-32 mt-32'>
-          <div className="w-full flex flex-col place-items-center gap-16">
-            <Shorts />
-          </div>
 
-          <ContactText />
-
-          <Footer />
-        </div>
       </body>
     </html>
   );

@@ -7,7 +7,7 @@ const Testimonial = async ({ channelId, testimonial }) => {
 
     return (
         <div className="w-full">
-            <div className="bg-accent/50 rounded-3xl p-10 grid gap-4 w-[40rem] h-fit">
+            <div className="bg-accent/50 rounded-3xl p-10 grid gap-4 max-w-[40rem] min-h-fit">
                 <div className="flex flex-col lg:flex-row justify-between gap-4">
                     <div className="flex items-center gap-4">
                         <Image

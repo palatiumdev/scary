@@ -5,7 +5,7 @@ import schemas from "./sanity/schemas"
 const config = defineConfig({
     name: "Sanity",
     title: "Sanity Studio",
-    projectId: process.env.SANITY_PROJECT_ID,
+    projectId: "mvucg8wc",
     dataset: 'production',
     apiVersion: "2024-08-10",
     plugins: [structureTool()],

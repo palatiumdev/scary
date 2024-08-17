@@ -14,7 +14,7 @@ import Video from "../Video/Video";
 //icons
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
-const Shorts = () => {
+const Shorts = ({ shorts }) => {
   const sliderRef = useRef(null);
 
   const settings = {
@@ -52,20 +52,16 @@ const Shorts = () => {
         <Slider
           {...settings}
           ref={sliderRef}
-          style={{ maskImage: 'linear-gradient(to right, transparent, black, black, transparent)' }}
+          style={{
+            maskImage: 'linear-gradient(to right, transparent, black, black, transparent)',
+            overflow: 'hidden', // Make sure overflow is hidden to avoid stacking issues
+          }}
         >
-          <div className="w-80 p-5">
-            <Video videoId={"cR35mJKAJak"} isShort={true} />
-          </div>
-          <div className="w-80 p-5">
-            <Video videoId={"mnso-G2NpyI"} isShort={true} />
-          </div>
-          <div className="w-80 p-5">
-            <Video videoId={"q_jL-7F2X2M"} isShort={true} />
-          </div>
-          <div className="w-80 p-5">
-            <Video videoId={"O-bNMMN1Tqc"} isShort={true} />
-          </div>
+          {shorts.map((short, i) => (
+            <div className="w-80 p-5" key={i}>
+              <Video videoId={short.videoId} isShort={true} />
+            </div>
+          ))}
         </Slider>
       </div>
       <MediaQuery minWidth={770}>
@@ -76,5 +72,4 @@ const Shorts = () => {
     </div>
   );
 };
-
 export default Shorts;

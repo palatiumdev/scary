@@ -5,11 +5,11 @@ import { FaDiscord } from "react-icons/fa6";
 import { IoIosMail } from "react-icons/io";
 
 
-const ContactText = () => {
+const ContactText = ({ contact, contactButtonText }) => {
     return (
         <div className='grid place-items-center gap-8 text-center px-5'>
-            <p className='text-5xl font-mono'>Let's work together! Here's how you can contact me. </p>
-            <Button text={"Send me a DM"} />
+            <p className='text-5xl font-mono'>{contact}</p>
+            <Button text={contactButtonText} />
             <div className='flex gap-8'>
                 <Contact icon={<FaDiscord size={50} />} action={() => { window.open("https://discordid.netlify.app/?id=762402570286792745", "_blank") }} />
                 <Contact enableAnimation={true} icon={<IoIosMail size={50} />} action={() => { navigator.clipboard.writeText("vfxpjb@gmail.com") }} />
