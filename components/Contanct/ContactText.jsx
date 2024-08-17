@@ -7,7 +7,7 @@ import { IoIosMail } from "react-icons/io";
 
 const ContactText = () => {
     return (
-        <div className='grid place-items-center gap-8 text-center'>
+        <div className='grid place-items-center gap-8 text-center px-5'>
             <p className='text-5xl font-mono'>Let's work together! Here's how you can contact me. </p>
             <Button text={"Send me a DM"} />
             <div className='flex gap-8'>

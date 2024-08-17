@@ -10,11 +10,12 @@ import Video from "@/components/Video/Video";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center bg-background rounded-b-3xl gap-32 pb-32 pt-8 px-32">
-      <div className="grid place-items-center place-content-center gap-16">
+    <main className="flex min-h-screen flex-col items-center bg-background rounded-b-3xl gap-32 pb-32 pt-8 px-10 lg:px-32">
+      <div className="flex flex-col place-items-center gap-16 w-full">
         <Header />
         <Hero />
-        <div className="overflow-clip grid place-content-center w-[100rem]" style={{ maskImage: 'linear-gradient(to right, transparent,  black, transparent)', }}>
+
+        <div className="w-full" style={{ maskImage: 'linear-gradient(to right, transparent,  black, transparent)', }}>
           <Slider>
             <Creator channelId={"UC14fB9eWBu579yRWLUhbFdQ"} />
             <Creator channelId={"UCragU9SBVhC3bhv2Qv4JuHA"} />
@@ -25,8 +26,11 @@ export default function Home() {
         </div>
       </div>
 
+
+
+
       <div className="grid place-items-center gap-16 w-full">
-        <div className="grid grid-cols-2 place-items-center gap-16 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center gap-16 w-full">
           <div className="w-full">
             <Video videoId={"bHxgNeEwX_g"} />
           </div>

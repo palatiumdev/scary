@@ -3,7 +3,7 @@ import Scene from "../Scene/Scene"
 
 const Footer = () => {
     return (
-        <div className="relative bg-BGaccent h-1/3 w-full grid place-content-center">
+        <div className="relative bg-BGaccent h-1/3 w-full overflow-clip grid place-content-center">
             <div className="absolute w-full inset-0">
                 <Scene />
             </div>
