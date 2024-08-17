@@ -41,7 +41,7 @@ export default async function Home() {
         <div className="grid place-items-center gap-16 w-full">
           {home[0].videos.map((video, i) => (
             <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center gap-16 w-full" key={i}>
-              <div className="w-full" style={{ order: `${i % 2 === 1 ? 1 : 2}` }}>
+              <div className="w-full" style={{ order: `${i % 2 === 1 ? 0 : 1}` }}>
                 <Video videoId={video.videoId} />
               </div>
               <div className="w-full grid place-content-center">
