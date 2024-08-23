@@ -13,14 +13,13 @@ import { getHome } from "@/sanity/sanity-utils";
 
 export default async function Home() {
   const home = await getHome();
-
   return (
     <main className="flex min-h-screen flex-col items-center">
       <div className="flex min-h-screen flex-col items-center bg-background rounded-b-3xl gap-32 pb-32 pt-8 px-5 lg:px-32">
         <div className="flex flex-col items-center gap-16 w-full">
           <Header
-            logo={"/logo.png"}
-            profile={"/profile.jpg"}
+            logo={home[0].headerLogo}
+            profile={home[0].profilePic}
             headerButtonText={home[0].headerButtonText}
           />
           <Hero
