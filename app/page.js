@@ -19,8 +19,8 @@ export default async function Home() {
       <div className="flex min-h-screen flex-col items-center bg-background rounded-b-3xl gap-32 pb-32 pt-8 px-5 lg:px-32">
         <div className="flex flex-col items-center gap-16 w-full">
           <Header
-            logo={home[0].headerLogo}
-            profile={home[0].profilePic}
+            logo={"/logo.png"}
+            profile={"/profile.jpg"}
             headerButtonText={home[0].headerButtonText}
           />
           <Hero
