@@ -8,14 +8,6 @@ const home = {
             name: "profilePic",
             title: "Profile picture",
             type: "image",
-            fields: [
-                {
-                    name: "alt",
-                    title: "Alt",
-                    type: "string",
-                }
-
-            ]
         },
         {
             name: "headerButtonText",

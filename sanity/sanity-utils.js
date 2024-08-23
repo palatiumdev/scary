@@ -14,10 +14,8 @@ export async function getHome() {
         groq`*[_type == "home"] {
             _id,
             _createdAt,
-              profilePic{
-                "url": asset->url,
-                alt
-            },
+            "headerLogo": headerLogo.asset->url,
+            "profilePic": profilePic.asset->url,
             headerButtonText,
             heroText,
             heroButtonText,

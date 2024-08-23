@@ -2,12 +2,12 @@
 import Image from "next/image"
 import MediaQuery from 'react-responsive'
 
-const Header = ({profile, headerButtonText }) => {
+const Header = ({ logo, profile, headerButtonText }) => {
     return (
         <div className="w-full flex justify-center lg:justify-between items-center bg-accent py-5 px-8 rounded-3xl">
             <MediaQuery minWidth={770}>
                 <div className="flex justify-start">
-                    <Image src={"/logo.png"} height={100} width={100} />
+                    <Image src={logo} height={100} width={100} />
                 </div>
             </MediaQuery>
 
