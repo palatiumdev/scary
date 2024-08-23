@@ -5,6 +5,11 @@ const home = {
     //add fields for sanity
     fields: [
         {
+            name: "headerLogo",
+            title: "Header logo",
+            type: "image",
+        },
+        {
             name: "profilePic",
             title: "Profile picture",
             type: "image",
