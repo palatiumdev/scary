@@ -18,7 +18,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`${tommy.variable} ${regular.variable} font-sans bg-BGaccent  text-white`} >
         {children}
-
       </body>
     </html>
   );
