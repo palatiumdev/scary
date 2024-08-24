@@ -9,15 +9,15 @@ const tommy = localFont({ src: '../public/Tommy.woff2', variable: "--font-tommy"
 const regular = localFont({ src: '../public/Regular.woff', variable: "--font-regular" });
 
 export const metadata = {
-  title: 'ErosFx',
+  title: 'Vfxpjb - Video editing portfolio',
   openGraph: {
-    title: 'ErosFx',
-    description: "ErosFx Portfolio",
-    url: 'https://erosfx.co/',
-    siteName: 'ErosFx',
+    title: 'Explore my video editing portfolio',
+    description: "Experienced video editor available for new projects. Contact me today 📩",
+    url: 'https://vfxpjb.vercel.app/',
+    siteName: 'Vfxpjb - Video editing portfolio',
     images: [
       {
-        url: 'https://i.postimg.cc/nhxkTdQx/banner.jpg',
+        url: 'https://i.postimg.cc/pTCt7TRC/banner.jpg',
         width: 800,
         height: 600,
       }
@@ -25,7 +25,7 @@ export const metadata = {
     twitter: {
       images: [
         {
-          url: 'https://i.postimg.cc/nhxkTdQx/banner.jpg',
+          url: 'https://i.postimg.cc/pTCt7TRC/banner.jpg',
           width: 800,
           height: 600.
         },
