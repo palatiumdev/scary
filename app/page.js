@@ -27,7 +27,7 @@ export default async function Home() {
             heroButtonText={home[0].heroButtonText}
             heroVideo={home[0].heroVideoUrl}
           />
-          <div className="w-[80vw] overflow-clip" style={{ maskImage: 'linear-gradient(to right, transparent, black, black, transparent)', }}>
+          <div className="w-[80vw] overflow-clip grid place-content-center" style={{ maskImage: 'linear-gradient(to right, transparent, black, black, transparent)', }}>
             <Slider className="overflow-clip">
               {home[0].creators.map((creator, i) => (
                 <Creator channelId={creator.channelId} key={i} />
