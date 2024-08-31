@@ -1,11 +1,11 @@
 import Shorts from "../Carousel/Shorts"
 import Scene from "../Scene/Scene"
 
-const Footer = ({ footerText, footerBackgroundText }) => {
+const Footer = ({ footerText, footerBackgroundText, contactText }) => {
     return (
         <div className="relative bg-BGaccent h-1/3 w-full overflow-clip grid place-content-center">
             <div className="absolute w-full inset-0">
-                <Scene />
+                {contactText}
             </div>
             <div className="text-center text-background">
                 <h1 className="text-[20rem] font-extrabold ">{footerBackgroundText}</h1>

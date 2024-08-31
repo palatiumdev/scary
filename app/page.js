@@ -41,12 +41,12 @@ export default async function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-32 pt-32 w-full bg-accent">
-        <div className="w-full flex flex-col items-center gap-16">
+      <div className="flex flex-col pt-32 w-full bg-accent">
+        <div className="w-full flex flex-col items-center">
           <Shorts shorts={home[0].shorts} />
         </div>
-        <ContactText contact={home[0].contact} contactButtonText={home[0].contactButtonText} />
-        <Footer footerText={home[0].footerText} footerBackgroundText={home[0].footerBackgroundText} />
+        <Footer footerText={home[0].footerText} footerBackgroundText={home[0].footerBackgroundText} contactText={<ContactText contact={home[0].contact} contactButtonText={home[0].contactButtonText} />
+        } />
       </div>
     </main>
   );
