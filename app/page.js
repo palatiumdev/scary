@@ -41,12 +41,27 @@ export default async function Home() {
         </div>
       </div>
 
-      <div className="flex flex-col pt-32 w-full bg-accent">
+      <div className="flex flex-col pt-32 w-full gap-16 bg-accent">
         <div className="w-full flex flex-col items-center">
           <Shorts shorts={home[0].shorts} />
         </div>
         <Footer footerText={home[0].footerText} footerBackgroundText={home[0].footerBackgroundText} contactText={<ContactText contact={home[0].contact} contactButtonText={home[0].contactButtonText} />
         } />
+
+        <div className="grid place-items-center mb-4">
+          <p className="text-base font-mono">{home[0].footerText}</p>
+          <p className="text-base font-mono">
+            Built by{" "}
+            <a
+              href="https://x.com/PalatiumDev"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @PalatiumDev
+            </a>
+          </p>
+        </div>
+
       </div>
     </main>
   );

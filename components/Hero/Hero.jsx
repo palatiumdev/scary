@@ -6,7 +6,9 @@ const Hero = ({ heroText, heroButtonText, heroVideo }) => {
 
             <div className="absolute inset-0 size-full grid place-content-center text-center place-items-center gap-8 z-10">
                 <h1 className="text-6xl font-extrabold z-20">{heroText}</h1>
-                <Button text={heroButtonText} />
+                <div className="w-96">
+                    <Button text={heroButtonText} />
+                </div>
             </div>
             <div className="absolute size-full bg-background/80"></div>
 
