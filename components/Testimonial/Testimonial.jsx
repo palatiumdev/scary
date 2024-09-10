@@ -30,8 +30,6 @@ const Testimonial = async ({ channelId, testimonial }) => {
                 </div>
             </div>
             <p className="text-2xl font-mono text-wrap">{testimonial}</p>
-
-
         </div>
     )
 }

@@ -5,8 +5,6 @@ import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import Hero from "@/components/Hero/Hero";
 import Slider from "@/components/Slider/Slider";
-import Testimonial from "@/components/Testimonial/Testimonial";
-import Video from "@/components/Video/Video";
 import VideoTestimonial from "@/components/VideoTestimonial/VideoTestimonial";
 
 import { getHome } from "@/sanity/sanity-utils";

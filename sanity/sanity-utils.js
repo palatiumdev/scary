@@ -42,3 +42,16 @@ export async function getHome() {
 }` , {}, { cache: "force-cache", next: { tags: ["home"] } }
     )
 }
+
+export async function getMetadata() {
+    return client.fetch(
+        groq`*[_type == "metadata"] {
+            _id,
+            _createdAt,
+            websiteTitle,
+            siteUrl,
+            description,
+            "embedBanner": embedBanner.asset->url
+        }` , {}, { cache: "force-cache", next: { tags: ["metadata"] } }
+    )
+}

@@ -11,7 +11,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Video from "../Video/Video";
 
-//icons
+//Icons
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const Shorts = ({ shorts }) => {

@@ -1,4 +1,6 @@
 "use client"
+
+//Components
 import { TbArrowBigRightFilled } from "react-icons/tb";
 
 const Button = ({ text }) => {
