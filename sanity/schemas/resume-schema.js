@@ -9,6 +9,11 @@ const resume = {
             type: 'image',
         },
         {
+            name: 'aboutTitle',
+            title: 'About title',
+            type: 'string',
+        },
+        {
             name: 'aboutText',
             title: 'About text',
             type: "array",

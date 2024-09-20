@@ -1,22 +1,27 @@
+import getCreator from "@/Data/getCreators";
+import { getResume } from "@/sanity/sanity-utils";
+import { PortableText } from "@portabletext/react";
 import Image from "next/image";
 
 export default async function Home() {
+    const resume = await getResume();
+    console.log(resume[0])
     return (
         <main className="flex min-h-screen flex-col items-center bg-background gap-32 pb-32 pt-8 px-5 lg:px-16 xl:px-32">
 
             <div className="grid place-items-center w-full gap-8">
                 <h1 className="text-5xl text-primary">About me</h1>
                 <div className="grid lg:grid-cols-2 place-items-center gap-8 lg:gap-0">
-                    <div className="relative bg-slate-50 size-96 rounded-3xl overflow-clip">
+                    <div className="relative size-96 rounded-3xl overflow-clip">
                         <Image
-                            src={""}
+                            src={resume[0].profileImage}
                             fill={true}
-                            className="absolute"
+                            className="absolute object-cover"
                         />
                     </div>
                     <div>
-                        <h1 className="text-4xl">Anthony Marino</h1>
-                        <p className="text-3xl font-mono">I’m a 21-year-old content producer and video editor with 150M+ views for clients like LankyBox, SypherPK, ChicaLive, FaZeEsports, and more. Currently with @onistudiosgg, I turn raw footage into content that captivates and delivers results.</p>
+                        <h1 className="text-4xl">{resume[0].aboutTitle}</h1>
+                        <p className="text-3xl font-mono"><PortableText value={resume[0].aboutText} /></p>
                     </div>
                 </div>
 
@@ -24,89 +29,104 @@ export default async function Home() {
 
             <div className="grid place-items-center w-full gap-8">
                 <h1 className="text-5xl text-primary">Education</h1>
-                <div className="grid  lg:grid-cols-2 gap-8 place-items-center">
-                    <div className="relative bg-slate-50 w-96 h-96 lg:h-full rounded-3xl overflow-clip">
-                        <Image
-                            src={""}
-                            fill={true}
-                            className="absolute"
-                        />
-                    </div>
-                    <div className="grid gap-8">
-                        <div className="text-center lg:text-left">
-                            <h1 className="text-3xl">Mercy University</h1>
-                            <p className="text-3xl font-mono">Manhattan, NY • September 2023 - Present</p>
-                        </div>
-
-                        <div className="grid gap-8">
-                            <div className="bg-accent rounded-3xl px-20 py-16 grid text-center gap-8 place-items-center">
-                                <h1 className="text-3xl">Bachelor of Science in Marketing</h1>
-                            </div>
-                            <div className="bg-accent rounded-3xl px-20 py-16 grid text-center gap-8 place-items-center">
-                                <h1 className="text-3xl">GPA: 3.7 (Dean's List)</h1>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
+                {resume[0].educationList.map((educationItem) => {
+                    return <Education logo={educationItem.logo} institution={educationItem.institution} details={educationItem.details} certificate={educationItem.certificate} marks={educationItem.marks} />
+                })}
             </div>
 
             <div className="grid place-items-center w-full gap-8">
                 <h1 className="text-5xl text-primary">Work</h1>
-                <div className="grid gap-8">
-                    <div className="grid gap-4">
-                        <h1 className="text-4xl">OniStudios</h1>
-                        <div className="relative bg-slate-50 overflow-clip rounded-3xl w-full h-[35rem]">
-                            <Image
-                                src={""}
-                                fill={true}
-                                className="absolute"
-                            />
-                        </div>
-                    </div>
-                    <div className="grid lg:grid-cols-2 text-center lg:text-left gap-8">
-                        <div className="grid gap-8">
-                            <div className="bg-accent rounded-3xl px-20 py-16 text-center gap-8 grid place-items-center">
-                                <h1 className="text-4xl">Jan 2024 - Present</h1>
-                            </div>
-
-                            <div className="bg-accent rounded-3xl px-20 py-16 grid text-center gap-8 place-items-center">
-                                <h1 className="text-4xl">Online/Virtual</h1>
-                            </div>
-                        </div>
-
-                        <p className="text-3xl font-mono">
-                            OniStudios has become a cornerstone in the gaming industry! It is a content studio renowned for their work with Fortnite content and founded by “SypherPK” and his wife “Manishie”!
-
-                            Some of the most widely known brands that OniStudios has worked with include: Epic Games, Nvidia, JBL, Paramount, AMD, and many more!
-
-                            OniStudios Has cultivated over 28 million followers, 18 thousand hours of content created, and averages over 364 million views per month! On top of that, they have executed over 170 successful brand campaigns!
-
-                            I edit content videos for OniStudios, specifically longform YouTube videos for their creators/brands and I always deliver before the deadline!
-                        </p>
-                    </div>
-                </div>
+                {resume[0].workList.map((workItem) => {
+                    return <Work title={workItem.title} logo={workItem.logo} date={workItem.date} details={workItem.details} info={workItem.info} />
+                })}
             </div>
 
             <div className="grid place-items-center w-full gap-8">
                 <h1 className="text-5xl text-primary">Clients</h1>
-                <div>
-                    <div className="relative bg-slate-50 overflow-clip size-80 rounded-t-3xl">
-                        <Image
-                            src={""}
-                            fill={true}
-                            className="absolute"
-                        />
-                    </div>
-                    <div className="bg-accent w-80 h-32 rounded-b-3xl text-center grid place-content-center">
-                        <h1 className="text-4xl">Username</h1>
-                        <p className="text-2xl font-mono"> 39M subscribers</p>
-                    </div>
-                </div>
+                {resume[0].clients?.map((client) => {
+                    return <Client channelId={client.channelId} />
+                })}
             </div>
 
 
         </main>
+    )
+}
+
+const Education = ({ logo, institution, details, certificate, marks }) => {
+    return (
+        <div className="grid  lg:grid-cols-2 gap-8 place-items-center">
+            <div className="relative w-96 h-96 lg:h-full rounded-3xl overflow-clip">
+                <Image
+                    src={logo}
+                    fill={true}
+                    className="absolute object-cover"
+                />
+            </div>
+            <div className="grid gap-8">
+                <div className="text-center lg:text-left">
+                    <h1 className="text-3xl">{institution}</h1>
+                    <p className="text-3xl font-mono">{details}</p>
+                </div>
+
+                <div className="grid gap-8">
+                    <div className="bg-accent rounded-3xl px-20 py-16 grid text-center gap-8 place-items-center">
+                        <h1 className="text-3xl">{certificate}</h1>
+                    </div>
+                    <div className="bg-accent rounded-3xl px-20 py-16 grid text-center gap-8 place-items-center">
+                        <h1 className="text-3xl">{marks}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    )
+}
+
+const Work = ({ title, logo, date, details, info }) => {
+    return (
+        <div className="grid gap-8">
+            <div className="grid gap-4">
+                <h1 className="text-4xl">{title}</h1>
+                <div className="relative overflow-clip rounded-3xl w-full h-[35rem]">
+                    <Image
+                        src={logo}
+                        fill={true}
+                        className="absolute object-cover"
+                    />
+                </div>
+            </div>
+            <div className="grid lg:grid-cols-2 text-center lg:text-left gap-8">
+                <div className="grid gap-8">
+                    <div className="bg-accent rounded-3xl px-20 py-16 text-center gap-8 grid place-items-center">
+                        <h1 className="text-4xl">{date}</h1>
+                    </div>
+
+                    <div className="bg-accent rounded-3xl px-20 py-16 grid text-center gap-8 place-items-center">
+                        <h1 className="text-4xl">{details}</h1>
+                    </div>
+                </div>
+
+                <p className="text-3xl font-mono"><PortableText value={info} /></p>
+            </div>
+        </div>
+    )
+}
+
+const Client = async ({ channelId }) => {
+    const user = await getCreator(channelId)
+    return (
+        <div>
+            <div className="relative overflow-clip size-80 rounded-t-3xl">
+                <Image
+                    src={user.profileImage}
+                    fill={true}
+                    className="absolute object-cover"
+                />
+            </div>
+            <div className="bg-accent w-80 h-32 rounded-b-3xl text-center grid place-content-center">
+                <h1 className="text-4xl">{user.username}</h1>
+                <p className="text-2xl font-mono"> {user.subCount} subscribers</p>
+            </div>
+        </div>
     )
 }

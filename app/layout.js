@@ -5,6 +5,7 @@ import { getMetadata } from '@/sanity/sanity-utils';
 import Header from '@/components/Header/Header';
 import { getHome } from "@/sanity/sanity-utils";
 import Footer from '@/components/Footer/Footer';
+import { PortableText } from '@portabletext/react';
 
 const tommy = localFont({ src: '../public/Tommy.woff2', variable: "--font-tommy" });
 const regular = localFont({ src: '../public/Regular.woff', variable: "--font-regular" });
@@ -23,7 +24,7 @@ export default async function RootLayout({ children }) {
         <div className="relative w-full overflow-x-clip flex flex-col bg-BGaccent">
           <Footer
             footerBackgroundText={home[0]?.footerBackgroundText}
-            footerText={home[0]?.footerText}
+            footerText={<PortableText value={home[0]?.footerText} />}
           />
         </div>
       </body>

@@ -5,9 +5,9 @@ const client = createClient({
     dataset: 'production',
     apiVersion: "2024-08-10",
     useCdn: process.env.NODE_ENV === 'production',
-})
+});
 
-//add groq query
+// Add GROQ query for home
 export async function getHome() {
     return client.fetch(
         groq`*[_type == "home"] {
@@ -38,10 +38,11 @@ export async function getHome() {
             contactButtonText,
             footerBackgroundText,
             footerText
-}` , {}, { cache: "force-cache", next: { tags: ["home"] } }
-    )
+        }`, {}, { cache: "force-cache", next: { tags: ["home"] } }
+    );
 }
 
+// Add GROQ query for metadata
 export async function getMetadata() {
     return client.fetch(
         groq`*[_type == "metadata"] {
@@ -51,50 +52,36 @@ export async function getMetadata() {
             siteUrl,
             description,
             "embedBanner": embedBanner.asset->url
-        }` , {}, { cache: "force-cache", next: { tags: ["metadata"] } }
-    )
+        }`, {}, { cache: "force-cache", next: { tags: ["metadata"] } }
+    );
 }
 
+// Add GROQ query for resume
 export async function getResume() {
     return client.fetch(
         groq`*[_type == "resume"] {
             _id,
             _createdAt,
-              profileImage{
-                asset->{
-                _id,
-                url
-                }
-            },
-            aboutText[]{
+            "profileImage": profileImage.asset->url,
+            aboutText[] {
                 ...  // Fetches the array of block content
             },
-            educationList[]{
-                logo{
-                asset->{
-                    _id,
-                    url
-                }
-                },
+            educationList[] {
+                "logo": logo.asset->url,
                 institution,
                 details,
                 certificate,
-                info[]{
-                ...  // Fetches the array of block content inside info
+                info[] {
+                    ...  // Fetches the array of block content inside info
                 }
             },
-            workList[]{
+            workList[] {
                 title,
-                logo{
-                asset->{
-                    _id,
-                    url
-                }
-                },
+                "logo": logo.asset->url,
                 date,
                 details,
                 marks
             }
-}` , {}, { cache: "force-cache", next: { tags: ["resume"] } }
-    )
+        }`, {}, { cache: "force-cache", next: { tags: ["resume"] } }
+    );
 }
