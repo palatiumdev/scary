@@ -6,7 +6,7 @@ export default async function RootLayout({ children }) {
 
     return (
         <html lang="en">
-            <body className={`${tommy.variable} ${regular.variable} font-sans bg-background  text-white`} >
+            <body >
                 {children}
             </body>
         </html>
