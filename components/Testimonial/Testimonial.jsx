@@ -21,14 +21,14 @@ const Testimonial = async ({ channelId, testimonial }) => {
                     </div>
 
                 </div>
-                <div className="flex text-2xl gap-2 text-yellow-300  pt-[5px]">
+                {/*                 <div className="flex text-2xl gap-2 text-yellow-300  pt-[5px]">
                     <FaStar />
                     <FaStar />
                     <FaStar />
                     <FaStar />
                     <FaStar />
                 </div>
-            </div>
+ */}            </div>
             <p className="text-2xl font-mono text-wrap">{testimonial}</p>
         </div>
     )

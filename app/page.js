@@ -5,6 +5,7 @@ import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
 import Hero from "@/components/Hero/Hero";
 import Slider from "@/components/Slider/Slider";
+import Stats from "@/components/Stats/Stats";
 import VideoTestimonial from "@/components/VideoTestimonial/VideoTestimonial";
 
 import { getHome } from "@/sanity/sanity-utils";
@@ -12,54 +13,49 @@ import { getHome } from "@/sanity/sanity-utils";
 export default async function Home() {
   const home = await getHome();
   return (
-    <main className="flex min-h-screen flex-col items-center">
-      <div className="flex min-h-screen flex-col items-center bg-background rounded-b-3xl gap-32 pb-32 pt-8 px-5 lg:px-32">
-        <div className="flex flex-col items-center gap-16 w-full">
-          <Header
-            logo={home[0].headerLogo}
-            profile={home[0].profilePic}
-            headerButtonText={home[0].headerButtonText}
-          />
-          <Hero
-            heroText={home[0].heroText}
-            heroButtonText={home[0].heroButtonText}
-            heroVideo={home[0].heroVideoUrl}
-          />
-          <div className="w-[80vw] overflow-clip grid place-content-center" style={{ maskImage: 'linear-gradient(to right, transparent, black, black, transparent)', }}>
-            <Slider className="overflow-clip">
-              {home[0].creators.map((creator, i) => (
-                <Creator channelId={creator.channelId} key={i} />
-              ))}
-            </Slider>
-          </div>
-        </div>
+    <main className="flex min-h-screen flex-col items-center gap-32 pb-32 px-5 lg:px-32 px-5 lg:px-16 xl:px-32">
+      <div className="grid gap-8">
+        <Hero
+          heroText={home[0]?.heroText}
+          heroButtonText={home[0]?.heroButtonText}
+          heroVideo={home[0]?.heroVideoUrl}
+        />
 
-        <div className="grid place-items-center gap-16 w-full">
-          <VideoTestimonial videos={home[0].videos} />
+        <div
+          className="w-[80vw] overflow-clip grid place-content-center"
+          style={{
+            maskImage:
+              "linear-gradient(to right, transparent, black, black, transparent)",
+          }}
+        >
+          <Slider className="overflow-clip">
+            {home[0]?.creators.map((creator, i) => (
+              <Creator channelId={creator.channelId} key={i} />
+            ))}
+          </Slider>
         </div>
       </div>
 
-      <div className="flex flex-col pt-32 w-full gap-16 bg-accent">
-        <div className="w-full flex flex-col items-center">
-          <Shorts shorts={home[0].shorts} />
-        </div>
-        <Footer footerText={home[0].footerText} footerBackgroundText={home[0].footerBackgroundText} contactText={<ContactText contact={home[0].contact} contactButtonText={home[0].contactButtonText} />
-        } />
+      <div className="grid place-items-center w-full gap-8">
+        <h1 className="text-5xl text-primary">Work</h1>
+        <VideoTestimonial videos={home[0]?.videos} />
+      </div>
 
-        <div className="grid place-items-center mb-4">
-          <p className="text-base font-mono">{home[0].footerText}</p>
-          <p className="text-base font-mono">
-            Built by{" "}
-            <a
-              href="https://x.com/PalatiumDev"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              @PalatiumDev
-            </a>
-          </p>
-        </div>
+      <div className="w-full flex flex-col items-center gap-8">
+        <h1 className="text-5xl text-primary">Shorts</h1>
+        <Shorts shorts={home[0]?.shorts} />
+      </div>
 
+      <div className="w-5/6">
+        <Stats stats={[{ number: "50+", text: "creators" }, { number: "150+", text: "views generated" }, { number: "200+", text: "videos edited" }]} />
+      </div>
+
+      <div className="grid gap-8 text-center">
+        <h1 className="text-5xl text-primary">Contact</h1>
+        <ContactText
+          contact={home[0]?.contact}
+          contactButtonText={home[0]?.contactButtonText}
+        />
       </div>
     </main>
   );
