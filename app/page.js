@@ -57,7 +57,7 @@ export default async function Home() {
           contact={home[0]?.contact}
           contactButtonText={home[0]?.contactButtonText}
         />
-      </div>
- */}    </main>
+      </div> */}
+    </main>
   );
 }

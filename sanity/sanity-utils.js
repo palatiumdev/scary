@@ -1,11 +1,10 @@
 import { createClient, groq } from "next-sanity";
 
 const client = createClient({
-    projectId: "9tjcuugs",
+    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
     dataset: 'production',
     apiVersion: "2024-08-10",
-    useCdn: false,
-
+    useCdn: process.env.NODE_ENV === 'production',
 })
 
 //add groq query
