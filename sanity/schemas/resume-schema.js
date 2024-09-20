@@ -57,6 +57,20 @@ const resume = {
             }
             ]
         },
+        {
+            title: 'Clients',
+            name: 'clients',
+            type: 'array',
+            of: [{
+                type: "object",
+                name: "client",
+                fields: [
+                    { type: "string", name: "username" },
+                    { type: "image", name: "channelId" },
+                ]
+            }
+            ]
+        },
     ]
 }
 
