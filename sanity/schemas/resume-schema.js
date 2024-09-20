@@ -66,7 +66,7 @@ const resume = {
                 name: "client",
                 fields: [
                     { type: "string", name: "username" },
-                    { type: "image", name: "channelId" },
+                    { type: "string", name: "channelId" },
                 ]
             }
             ]
