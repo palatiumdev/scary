@@ -28,14 +28,7 @@ const resume = {
                     { type: "string", name: "institution" },
                     { type: "string", name: "details" },
                     { type: "string", name: "certificate" },
-                    {
-                        name: 'info',
-                        title: 'Info',
-                        type: "array",
-                        of: [{
-                            type: "block",
-                        }]
-                    },
+                    { type: "string", name: "marks" },
                 ]
             }
             ]
@@ -52,7 +45,14 @@ const resume = {
                     { type: "image", name: "logo" },
                     { type: "string", name: "date" },
                     { type: "string", name: "details" },
-                    { type: "string", name: "marks" },
+                    {
+                        name: 'info',
+                        title: 'Info',
+                        type: "array",
+                        of: [{
+                            type: "block",
+                        }]
+                    },
                 ]
             }
             ]
