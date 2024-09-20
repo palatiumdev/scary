@@ -54,3 +54,47 @@ export async function getMetadata() {
         }` , {}, { cache: "force-cache", next: { tags: ["metadata"] } }
     )
 }
+
+export async function getResume() {
+    return client.fetch(
+        groq`*[_type == "resume"] {
+            _id,
+            _createdAt,
+              profileImage{
+                asset->{
+                _id,
+                url
+                }
+            },
+            aboutText[]{
+                ...  // Fetches the array of block content
+            },
+            educationList[]{
+                logo{
+                asset->{
+                    _id,
+                    url
+                }
+                },
+                institution,
+                details,
+                certificate,
+                info[]{
+                ...  // Fetches the array of block content inside info
+                }
+            },
+            workList[]{
+                title,
+                logo{
+                asset->{
+                    _id,
+                    url
+                }
+                },
+                date,
+                details,
+                marks
+            }
+}` , {}, { cache: "force-cache", next: { tags: ["resume"] } }
+    )
+}

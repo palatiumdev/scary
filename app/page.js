@@ -15,7 +15,7 @@ export default async function Home() {
   console.log("home", home[0])
   return (
     <main className="flex min-h-screen flex-col items-center gap-32 pb-32 px-5 lg:px-32 px-5 lg:px-16 xl:px-32">
-      {/*       <div className="grid gap-8">
+      <div className="grid gap-8">
         <Hero
           heroText={home[0]?.heroText}
           heroButtonText={home[0]?.heroButtonText}
@@ -57,7 +57,7 @@ export default async function Home() {
           contact={home[0]?.contact}
           contactButtonText={home[0]?.contactButtonText}
         />
-      </div> */}
+      </div>
     </main>
   );
 }

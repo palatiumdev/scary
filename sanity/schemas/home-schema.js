@@ -5,21 +5,6 @@ const home = {
     //add fields for sanity
     fields: [
         {
-            name: "headerLogo",
-            title: "Header logo",
-            type: "image",
-        },
-        {
-            name: "profilePic",
-            title: "Profile picture",
-            type: "image",
-        },
-        {
-            name: "headerButtonText",
-            title: "Header button text",
-            type: "string"
-        },
-        {
             name: "heroText",
             title: "Hero text",
             type: "string"
@@ -95,9 +80,12 @@ const home = {
             type: "string"
         },
         {
-            name: "footerText",
-            title: "Footer text",
-            type: "string"
+            name: 'footerText',
+            title: 'Footer text',
+            type: "array",
+            of: [{
+                type: "block",
+            }]
         },
     ]
 }
