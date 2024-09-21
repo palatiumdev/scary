@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default async function Home() {
     const resume = await getResume();
-    console.log(resume[0].aboutTitle)
+    console.log(resume[0])
     return (
         <main className="flex min-h-screen flex-col items-center bg-background gap-32 pb-32 pt-8 px-5 lg:px-16 xl:px-32">
 
