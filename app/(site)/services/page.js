@@ -21,7 +21,7 @@ export default async function Home() {
 const Skill = ({ icon, title }) => {
     return (
         <div className="grid size-80 place-items-center p-10 bg-BGaccent rounded-3xl">
-            <div className="relative fill-BGaccent size-24">
+            <div className="relative fill-white size-24">
                 <Image
                     src={icon}
                     fill={true}
