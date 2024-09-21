@@ -5,9 +5,9 @@ export default async function Home() {
     const services = await getServices()
 
     return (
-        <main className="grid place-items-center gap-8">
+        <main className="grid place-items-center  gap-8 py-8">
             <h1 className="text-5xl text-primary">Services</h1>
-            <div className="flex gap-8">
+            <div className="flex flex-wrap gap-8 place-content-center">
                 {services[0]?.services.map((service, i) => {
                     return (
                         <Skill key={i} icon={service.icon} title={service.text} />

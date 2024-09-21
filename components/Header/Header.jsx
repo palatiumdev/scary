@@ -56,7 +56,7 @@ const Header = () => {
                                         <Link href="/resume" >Resume</Link>
                                     </li>
                                     <li className="flex font-mono items-center gap-5 text-xl">
-                                        <Link href="/services" >Resume</Link>
+                                        <Link href="/services" >Services</Link>
                                     </li>
                                     <hr className="w-full" />
                                     <li className="flex font-mono items-center gap-3 text-xl cursor-pointer" onClick={() => { window.open("https://x.com/ScaryAM__", "_blank") }}>

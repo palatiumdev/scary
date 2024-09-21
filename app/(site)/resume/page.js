@@ -10,7 +10,7 @@ export default async function Home() {
 
             <div className="grid place-items-center w-full gap-8">
                 <h1 className="text-5xl text-primary">About me</h1>
-                <div className="grid lg:grid-cols-3 place-items-center gap-8 lg:gap-0">
+                <div className="grid lg:grid-cols-3 place-items-center gap-8 lg:gap-8">
                     <div className="relative size-96 rounded-3xl overflow-clip">
                         <Image
                             src={resume[0].profileImage}
