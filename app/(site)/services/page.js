@@ -2,7 +2,7 @@ import { getServices } from "@/sanity/sanity-utils"
 import Image from "next/image"
 
 export default async function Home() {
-    console.log(services[0].services)
+    const services = await getServices()
     return (
         <main className="grid place-items-center gap-8">
             <h1 className="text-5xl text-primary">Services</h1>
