@@ -47,7 +47,7 @@ export default async function Home() {
       </div>
 
       <div className="w-5/6">
-        <Stats stats={[{ number: "50+", text: "creators" }, { number: "150+", text: "views generated" }, { number: "200+", text: "videos edited" }]} />
+        <Stats stats={home[0]?.stats} />
       </div>
 
       <div className="grid gap-8 text-center">

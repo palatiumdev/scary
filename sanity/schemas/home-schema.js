@@ -65,6 +65,20 @@ const home = {
             ]
         },
         {
+            title: 'Stats',
+            name: 'stats',
+            type: 'array',
+            of: [{
+                type: "object",
+                name: "stat",
+                fields: [
+                    { type: "string", name: "number" },
+                    { type: "string", name: "text" },
+                ]
+            }
+            ]
+        },
+        {
             name: "contact",
             title: "Contact text",
             type: "string"

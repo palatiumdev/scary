@@ -34,6 +34,10 @@ export async function getHome() {
                 videoId,
                 title
             },
+            stats[] {
+                number,
+                text
+            },
             contact,
             contactButtonText,
             footerBackgroundText,

@@ -60,7 +60,7 @@ const Header = () => {
                                     <li className="flex font-mono items-center gap-3 text-xl cursor-pointer" onClick={() => { window.open("https://x.com/ScaryAM__", "_blank") }}>
                                         Twitter
                                     </li>
-                                    <li className="flex font-mono items-center gap-3 text-xl cursor-pointer" onClick={() => { navigator.clipboard.writeText("amarino5@mercy.edu") }}>
+                                    <li className="flex font-mono items-center gap-3 text-xl cursor-pointer" onClick={() => { window.open("mailto:scaryfatgaming@gmail.com") }}>
                                         Mail
                                     </li>
                                     <li className="flex font-mono items-center gap-3 text-xl cursor-pointer" onClick={() => { window.open("https://discordid.netlify.app/?id=705577855672909865", "_blank") }}>
@@ -93,7 +93,7 @@ const Header = () => {
                         <FaTwitter size={35} onClick={() => { window.open("https://x.com/ScaryAM__", "_blank") }} className="hover:fill-primary cursor-pointer" />
 
                         <div className="relative grid place-items-center">
-                            <IoIosMail size={35} onClick={() => { navigator.clipboard.writeText("amarino5@mercy.edu"); setCopied(true); setTimeout(() => setCopied(false), 3000) }} className="hover:fill-primary cursor-pointer" />
+                            <IoIosMail size={35} onClick={() => { navigator.clipboard.writeText("scaryfatgaming@gmail.com"); setCopied(true); setTimeout(() => setCopied(false), 3000) }} className="hover:fill-primary cursor-pointer" />
                             <AnimatePresence>
                                 {copied &&
                                     (<motion.p
