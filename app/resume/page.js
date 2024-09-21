@@ -5,7 +5,6 @@ import Image from "next/image";
 
 export default async function Home() {
     const resume = await getResume();
-    console.log(resume[0])
     return (
         <main className="flex min-h-screen flex-col items-center bg-background gap-32 pb-32 pt-8 px-5 lg:px-16 xl:px-32">
 
@@ -42,10 +41,12 @@ export default async function Home() {
             </div>
 
             <div className="grid place-items-center w-full gap-8">
-                <h1 className="text-5xl text-primary">Clients</h1>
-                {resume[0].clients?.map((client, i) => {
-                    return <Client key={i} channelId={client.channelId} />
-                })}
+                <h1 className="text-5xl text-primary grid">Clients</h1>
+                <div className="grid place-items-center w-full gap-8 lg:grid-cols-2 2xl:grid-cols-4">
+                    {resume[0].clients?.map((client, i) => {
+                        return <Client key={i} channelId={client.channelId} />
+                    })}
+                </div>
             </div>
 
 
@@ -115,7 +116,7 @@ const Work = ({ title, logo, date, details, info }) => {
 const Client = async ({ channelId }) => {
     const user = await getCreator(channelId)
     return (
-        <div>
+        <div className="my-8">
             <div className="relative overflow-clip size-80 rounded-t-3xl">
                 <Image
                     src={user.profileImage}
