@@ -24,7 +24,7 @@ const Header = () => {
 
         //Mobile
         return (
-            <div className="h-full rounded-3xl bg-black text-white  z-50">
+            <div className="h-full w-full rounded-3xl bg-black text-white  z-50">
                 <div className="overflow-y-clip flex h-24 px-10" >
                     <div className="grid place-content-center h-full pb-2">
                         <GiPumpkin size={40} />

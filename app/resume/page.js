@@ -19,8 +19,8 @@ export default async function Home() {
                         />
                     </div>
                     <div className="col-span-2">
-                        <h1 className="text-4xl">{resume[0].aboutTitle}</h1>
-                        <p className="text-3xl font-mono"><PortableText value={resume[0].aboutText} /></p>
+                        <h1 className="text-3xl lg:text-4xl">{resume[0].aboutTitle}</h1>
+                        <p className="text-2xl lg:text-3xl font-mono"><PortableText value={resume[0].aboutText} /></p>
                     </div>
                 </div>
 
@@ -42,7 +42,7 @@ export default async function Home() {
 
             <div className="grid place-items-center w-full gap-8">
                 <h1 className="text-5xl text-primary grid">Clients</h1>
-                <div className="grid place-items-center w-full gap-8 lg:grid-cols-2 2xl:grid-cols-4">
+                <div className="grid place-items-center place-content-center w-full gap-8 lg:grid-cols-2 2xl:grid-cols-4">
                     {resume[0].clients?.map((client, i) => {
                         return <Client key={i} channelId={client.channelId} />
                     })}
@@ -67,7 +67,7 @@ const Education = ({ logo, institution, details, certificate, marks }) => {
             <div className="grid gap-8">
                 <div className="text-center lg:text-left">
                     <h1 className="text-3xl">{institution}</h1>
-                    <p className="text-3xl font-mono">{details}</p>
+                    <p className="text-2xl lg:text-3xl font-mono">{details}</p>
                 </div>
 
                 <div className="grid gap-8">
@@ -87,7 +87,7 @@ const Work = ({ title, logo, date, details, info }) => {
     return (
         <div className="grid gap-8">
             <div className="grid gap-4">
-                <h1 className="text-4xl">{title}</h1>
+                <h1 className="text-3xl lg:text-4xl">{title}</h1>
                 <div className="relative overflow-clip rounded-3xl w-full h-[35rem]">
                     <Image
                         src={logo}
@@ -99,15 +99,15 @@ const Work = ({ title, logo, date, details, info }) => {
             <div className="grid lg:grid-cols-2 text-center lg:text-left gap-8">
                 <div className="grid gap-8">
                     <div className="bg-accent rounded-3xl px-20 py-16 text-center gap-8 grid place-items-center">
-                        <h1 className="text-4xl">{date}</h1>
+                        <h1 className="text-3xl lg:text-4xl">{date}</h1>
                     </div>
 
                     <div className="bg-accent rounded-3xl px-20 py-16 grid text-center gap-8 place-items-center">
-                        <h1 className="text-4xl">{details}</h1>
+                        <h1 className="text-3xl lg:text-4xl">{details}</h1>
                     </div>
                 </div>
 
-                <p className="text-3xl font-mono"><PortableText value={info} /></p>
+                <p className="text-2xl lg:text-3xl font-mono"><PortableText value={info} /></p>
             </div>
         </div>
     )
@@ -125,8 +125,8 @@ const Client = async ({ channelId }) => {
                 />
             </div>
             <div className="bg-accent w-80 h-32 rounded-b-3xl text-center grid place-content-center">
-                <h1 className="text-4xl">{user.username}</h1>
-                <p className="text-2xl font-mono"> {user.subCount} subscribers</p>
+                <h1 className="text-3xl lg:text-4xl">{user.username}</h1>
+                <p className="text-2xl lg:text-3xl font-mono"> {user.subCount} subscribers</p>
             </div>
         </div>
     )
