@@ -93,14 +93,6 @@ const home = {
             title: "Footer background text",
             type: "string"
         },
-        {
-            name: 'footerText',
-            title: 'Footer text',
-            type: "array",
-            of: [{
-                type: "block",
-            }]
-        },
     ]
 }
 

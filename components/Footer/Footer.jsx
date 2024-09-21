@@ -10,7 +10,6 @@ const Footer = ({ footerBackgroundText, footerText }) => {
                 </h1>
             </div>
             <div className="absolute bottom-0 text-center right-0 left-0 grid place-items-center">
-                <p className="text-base font-mono">{footerText}</p>
                 <p className="text-base font-mono">
                     Built by{" "}
                     <a
