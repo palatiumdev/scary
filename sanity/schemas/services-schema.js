@@ -1,19 +1,8 @@
 const services = {
-    name: "metadata",
-    title: "Metadata",
+    name: "services",
+    title: "Services",
     type: "document",
     fields: [
-        {
-            name: 'websiteTitle',
-            title: 'Website title',
-            type: 'string',
-        },
-        {
-            name: 'siteUrl',
-            title: 'Site URL',
-            type: 'url',
-        },
-
         {
             title: 'Services',
             name: 'services',
@@ -23,14 +12,14 @@ const services = {
                 name: "service",
                 fields: [
                     {
-                        name: 'description',
-                        title: 'Description',
-                        type: 'string',
+                        name: "icon",
+                        title: "Icon",
+                        type: "image"
                     },
                     {
-                        name: "embedBanner",
-                        title: "Embed banner",
-                        type: "image"
+                        name: 'text',
+                        title: 'Text',
+                        type: 'string',
                     },
                 ]
             }

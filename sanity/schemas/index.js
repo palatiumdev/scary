@@ -6,4 +6,4 @@ import services from "./services-schema";
 //add all schemas here
 const schemas = [home, metadata, resume, services]
 
-export default schemas;
+export default schemas; w
