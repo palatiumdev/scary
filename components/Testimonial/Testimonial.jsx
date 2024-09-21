@@ -6,7 +6,7 @@ const Testimonial = async ({ channelId, testimonial }) => {
     const user = await getCreator(channelId)
 
     return (
-        <div className="bg-accent/50 rounded-3xl p-10 grid gap-4 max-w-[40rem] min-h-fit">
+        <div className="bg-accent/50 rounded-3xl p-10 grid gap-4 max-w-[40rem] 2xl:w-[40rem] min-h-fit">
             <div className="flex w-full justify-between	lg:gap-8 lg:flex-row flex-col gap-4">
                 <div className="flex items-center gap-4">
                     <Image

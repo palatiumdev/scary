@@ -19,14 +19,3 @@ const ContactText = ({ contact, contactButtonText }) => {
 }
 
 export default ContactText
-
-/*
-                <div className="bg-primary rounded-3xl lg:w-fit px-10 py-5 grid place-content-center lg:order-1 w-full">
-                    <Contact icon={<FaDiscord size={50} />} action={() => { window.open("https://discordid.netlify.app/?id=762402570286792745", "_blank") }} />
-                </div>
-
-                                <div className="bg-primary rounded-3xl lg:w-fit px-10 py-5 grid place-content-center lg:order-1 w-full">
-                    <Contact enableAnimation={true} icon={<IoIosMail size={50} />} action={() => { navigator.clipboard.writeText("vfxpjb@gmail.com") }} />
-                </div>
-
-*/

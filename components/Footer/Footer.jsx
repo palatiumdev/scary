@@ -5,7 +5,7 @@ const Footer = ({ footerBackgroundText, footerText }) => {
     return (
         <>
             <div className="w-full gap-4 grid place-content-center overflow-x-clip">
-                <h1 className="text-[20rem] font-extrabold text-background">
+                <h1 className="text-[20rem] font-extrabold text-white">
                     {footerBackgroundText}
                 </h1>
             </div>

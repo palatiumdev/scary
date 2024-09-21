@@ -46,9 +46,9 @@ export default async function Home() {
         <Shorts shorts={home[0]?.shorts} />
       </div>
 
-      {/*  <div className="w-5/6">
+      <div className="w-5/6">
         <Stats stats={home[0]?.stats} />
-      </div> */}
+      </div>
 
       <div className="grid gap-8 text-center">
         <h1 className="text-5xl text-primary">Contact</h1>

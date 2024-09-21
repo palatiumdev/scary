@@ -90,3 +90,18 @@ export async function getResume() {
         }`, {}, { cache: "force-cache", next: { tags: ["resume"] } }
     );
 }
+
+export async function getServices() {
+    return client.fetch(
+        groq`*[_type == "services"] {
+            _id,
+            _createdAt,
+            services[] {
+                "icon" -> icon.asset->url,
+                text
+            }
+        }`,
+        {},
+        { cache: "force-cache", next: { tags: ["services"] } }
+    );
+}

@@ -33,11 +33,13 @@ export default async function Home() {
                 })}
             </div>
 
-            <div className="grid place-items-center w-full gap-8">
+            <div className="grid place-items-center gap-8 w-5/6">
                 <h1 className="text-5xl text-primary">Work</h1>
-                {resume[0].workList.map((workItem, i) => {
-                    return <Work key={i} title={workItem.title} logo={workItem.logo} date={workItem.date} details={workItem.details} info={workItem.info} />
-                })}
+                <div className="grid gap-24">
+                    {resume[0].workList.map((workItem, i) => {
+                        return <Work key={i} title={workItem.title} logo={workItem.logo} date={workItem.date} details={workItem.details} info={workItem.info} />
+                    })}
+                </div>
             </div>
 
             <div className="grid place-items-center w-full gap-8">
