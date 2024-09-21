@@ -4,6 +4,6 @@ import resume from "./resume-schema";
 import services from "./services-schema";
 
 //add all schemas here
-const schemas = [home, metadata, resume, services]
+const schemas = [home, resume, services, metadata]
 
-export default schemas; w
+export default schemas; 
