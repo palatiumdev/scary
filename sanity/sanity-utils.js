@@ -63,6 +63,7 @@ export async function getResume() {
             _id,
             _createdAt,
             "profileImage": profileImage.asset->url,
+            aboutTitle,
             aboutText[] {
                 ...  // Fetches the array of block content
             },
@@ -71,16 +72,16 @@ export async function getResume() {
                 institution,
                 details,
                 certificate,
-                info[] {
-                    ...  // Fetches the array of block content inside info
-                }
+                marks
             },
             workList[] {
                 title,
                 "logo": logo.asset->url,
                 date,
                 details,
-                marks
+                info[] {
+                    ...  // Fetches the array of block content inside info
+                }
             }
         }`, {}, { cache: "force-cache", next: { tags: ["resume"] } }
     );

@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default async function Home() {
     const resume = await getResume();
-    console.log(resume[0])
+    console.log(resume[0].aboutTitle)
     return (
         <main className="flex min-h-screen flex-col items-center bg-background gap-32 pb-32 pt-8 px-5 lg:px-16 xl:px-32">
 
@@ -29,22 +29,22 @@ export default async function Home() {
 
             <div className="grid place-items-center w-full gap-8">
                 <h1 className="text-5xl text-primary">Education</h1>
-                {resume[0].educationList.map((educationItem) => {
-                    return <Education logo={educationItem.logo} institution={educationItem.institution} details={educationItem.details} certificate={educationItem.certificate} marks={educationItem.marks} />
+                {resume[0].educationList.map((educationItem, i) => {
+                    return <Education key={i} logo={educationItem.logo} institution={educationItem.institution} details={educationItem.details} certificate={educationItem.certificate} marks={educationItem.marks} />
                 })}
             </div>
 
             <div className="grid place-items-center w-full gap-8">
                 <h1 className="text-5xl text-primary">Work</h1>
-                {resume[0].workList.map((workItem) => {
-                    return <Work title={workItem.title} logo={workItem.logo} date={workItem.date} details={workItem.details} info={workItem.info} />
+                {resume[0].workList.map((workItem, i) => {
+                    return <Work key={i} title={workItem.title} logo={workItem.logo} date={workItem.date} details={workItem.details} info={workItem.info} />
                 })}
             </div>
 
             <div className="grid place-items-center w-full gap-8">
                 <h1 className="text-5xl text-primary">Clients</h1>
-                {resume[0].clients?.map((client) => {
-                    return <Client channelId={client.channelId} />
+                {resume[0].clients?.map((client, i) => {
+                    return <Client key={i} channelId={client.channelId} />
                 })}
             </div>
 
