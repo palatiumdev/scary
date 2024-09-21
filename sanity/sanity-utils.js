@@ -97,8 +97,8 @@ export async function getServices() {
             _id,
             _createdAt,
             services[] {
-                "icon" -> icon.asset->url,
-                text
+                "icon": icon.asset->url,
+                text,
             }
         }`,
         {},

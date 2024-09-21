@@ -21,7 +21,7 @@ export default async function RootLayout({ children }) {
           <Header />
         </div>
         {children}
-        <div className="relative w-full overflow-x-clip flex flex-col bg-BGaccent">
+        <div className="relative w-full overflow-x-clip flex flex-col bg-BGaccent mt-8">
           <Footer footerBackgroundText={home[0]?.footerBackgroundText} />
         </div>
       </body>

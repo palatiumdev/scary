@@ -1,7 +1,7 @@
 import Shorts from "../Carousel/Shorts";
 import Scene from "../Scene/Scene";
 
-const Footer = ({ footerBackgroundText, footerText }) => {
+const Footer = ({ footerBackgroundText }) => {
     return (
         <>
             <div className="w-full gap-4 grid place-content-center overflow-x-clip">
