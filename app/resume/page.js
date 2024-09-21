@@ -11,7 +11,7 @@ export default async function Home() {
 
             <div className="grid place-items-center w-full gap-8">
                 <h1 className="text-5xl text-primary">About me</h1>
-                <div className="grid lg:grid-cols-2 place-items-center gap-8 lg:gap-0">
+                <div className="grid lg:grid-cols-3 place-items-center gap-8 lg:gap-0">
                     <div className="relative size-96 rounded-3xl overflow-clip">
                         <Image
                             src={resume[0].profileImage}
@@ -19,7 +19,7 @@ export default async function Home() {
                             className="absolute object-cover"
                         />
                     </div>
-                    <div>
+                    <div className="col-span-2">
                         <h1 className="text-4xl">{resume[0].aboutTitle}</h1>
                         <p className="text-3xl font-mono"><PortableText value={resume[0].aboutText} /></p>
                     </div>
