@@ -16,7 +16,6 @@ export default async function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center gap-32 pb-32 px-5 lg:px-16 xl:px-32">
       <div className="grid gap-8">
-        <Short videoId={"6OctHLex_Io"} />
         <Hero
           heroText={home[0]?.heroText}
           heroButtonText={home[0]?.heroButtonText}
