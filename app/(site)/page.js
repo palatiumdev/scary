@@ -6,6 +6,7 @@ import Header from "@/components/Header/Header";
 import Hero from "@/components/Hero/Hero";
 import Slider from "@/components/Slider/Slider";
 import Stats from "@/components/Stats/Stats";
+import Short from "@/components/Video/Short";
 import VideoTestimonial from "@/components/VideoTestimonial/VideoTestimonial";
 
 import { getHome } from "@/sanity/sanity-utils";
@@ -13,8 +14,9 @@ import { getHome } from "@/sanity/sanity-utils";
 export default async function Home() {
   const home = await getHome();
   return (
-    <main className="flex min-h-screen flex-col items-center gap-32 pb-32 px-5  lg:px-16 xl:px-32">
+    <main className="flex min-h-screen flex-col items-center gap-32 pb-32 px-5 lg:px-16 xl:px-32">
       <div className="grid gap-8">
+        <Short videoId={"6OctHLex_Io"} />
         <Hero
           heroText={home[0]?.heroText}
           heroButtonText={home[0]?.heroButtonText}
