@@ -9,16 +9,10 @@ import "slick-carousel/slick/slick-theme.css";
 
 //Components
 import Slider from "react-slick";
+import Short from "../Video/Short";
 
 //Icons
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-
-import dynamic from 'next/dynamic';
-
-const Short = dynamic(() => import('../Video/Short'), {
-  ssr: false, // Disable server-side rendering if you want it client-side only
-  loading: () => <div className="relative w-full rounded-3xl overflow-clip bg-slate-300 animate-pulse" style={{ paddingBottom: '177.78%' /* (16/9)*100 = 177.78% to maintain 9:16 aspect ratio */ }} />
-});
 
 const Shorts = ({ shorts }) => {
   const sliderRef = useRef(null);
