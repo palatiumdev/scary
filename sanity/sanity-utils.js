@@ -86,7 +86,12 @@ export async function getResume() {
                     ...  // Fetches the array of block content inside info
                 }
             },
-            clients,
+            clients[] {
+                channelId,
+                username,
+                subcount,
+                "profileImage": profileImage.asset->url
+            },
         }`, {}, { revalidate: 1000 }
     );
 }
