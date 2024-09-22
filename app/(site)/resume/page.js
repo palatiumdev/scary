@@ -5,6 +5,7 @@ import Image from "next/image";
 
 export default async function Home() {
     const resume = await getResume();
+
     return (
         <main className="flex min-h-screen flex-col items-center bg-background gap-32 pb-32 pt-8 px-5 lg:px-16 xl:px-32">
 
@@ -20,7 +21,7 @@ export default async function Home() {
                     </div>
                     <div className="col-span-2">
                         <h1 className="text-3xl lg:text-4xl">{resume[0].aboutTitle}</h1>
-                        <p className="text-2xl lg:text-3xl font-mono"><PortableText value={resume[0].aboutText} /></p>
+                        <div className="text-2xl lg:text-3xl font-mono"><PortableText value={resume[0].aboutText} /></div>
                     </div>
                 </div>
 
@@ -46,7 +47,7 @@ export default async function Home() {
                 <h1 className="text-5xl text-primary grid">Clients</h1>
                 <div className="grid place-items-center place-content-center w-full gap-8 lg:grid-cols-2 2xl:grid-cols-4">
                     {resume[0].clients?.map((client, i) => {
-                        return <Client key={i} channelId={client.channelId} />
+                        return <Client key={i} client={client} />
                     })}
                 </div>
             </div>
@@ -100,11 +101,11 @@ const Work = ({ title, logo, date, details, info }) => {
             </div>
             <div className="grid lg:grid-cols-2 text-center lg:text-left gap-8">
                 <div className="grid gap-8">
-                    <div className="bg-accent rounded-3xl px-20 py-16 text-center gap-8 grid place-items-center">
+                    <div className="bg-accent rounded-3xl py-16 text-center gap-8 grid place-items-center">
                         <h1 className="text-3xl lg:text-4xl">{date}</h1>
                     </div>
 
-                    <div className="bg-accent rounded-3xl px-20 py-16 grid text-center gap-8 place-items-center">
+                    <div className="bg-accent rounded-3xl py-16 grid text-center gap-8 place-items-center">
                         <h1 className="text-3xl lg:text-4xl">{details}</h1>
                     </div>
                 </div>
@@ -115,8 +116,23 @@ const Work = ({ title, logo, date, details, info }) => {
     )
 }
 
-const Client = async ({ channelId }) => {
-    const user = await getCreator(channelId)
+const Client = async ({ client }) => {
+    let user = {
+        username: "",
+        subCount: "",
+        profileImage: "",
+
+    }
+    if (client.channelId) {
+        user = await getCreator(client.channelId)
+    } else {
+        user = {
+            username: client.username,
+            subCount: client.subCount,
+            profileImage: client.profileImage,
+        }
+    }
+
     return (
         <div className="my-8">
             <div className="relative overflow-clip size-80 rounded-t-3xl">

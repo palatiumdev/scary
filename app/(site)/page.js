@@ -10,6 +10,7 @@ import { getHome } from "@/sanity/sanity-utils";
 
 export default async function Home() {
   const home = await getHome();
+
   return (
     <main className="flex min-h-screen flex-col items-center gap-32 pb-32 px-5 lg:px-16 xl:px-32">
       <div className="grid gap-8">

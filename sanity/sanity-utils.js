@@ -87,7 +87,7 @@ export async function getResume() {
                 }
             },
             clients,
-        }`, {}, { cache: "force-cache", next: { tags: ["resume"] } }
+        }`, {}, { revalidate: 1000 }
     );
 }
 

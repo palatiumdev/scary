@@ -71,6 +71,8 @@ const resume = {
                 name: "client",
                 fields: [
                     { type: "string", name: "username" },
+                    { type: "string", name: "profileImage" },
+                    { type: "string", name: "subCount" },
                     { type: "string", name: "channelId" },
                 ]
             }

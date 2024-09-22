@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 const Short = ({ videoId }) => {
     const [isLoading, setIsLoading] = useState(true);
 
-    // Function to call when iframe has finished loading
     const handleIframeLoad = () => {
         setIsLoading(false);
     };
@@ -18,8 +17,8 @@ const Short = ({ videoId }) => {
                     src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}`}
                     allow="autoplay"
                     allowFullScreen
-                    className={`absolute top-0 left-0 w-full h-full ${isLoading ? 'hidden' : ''}`} // Hide iframe while loading
-                    onLoad={handleIframeLoad} // Set loading to false when iframe loads
+                    className={`absolute top-0 left-0 w-full h-full ${isLoading ? 'hidden' : ''}`}
+                    onLoad={handleIframeLoad}
                 ></iframe>
             </div>
         </div>
