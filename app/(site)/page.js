@@ -1,12 +1,9 @@
 import Shorts from "@/components/Carousel/Shorts";
 import ContactText from "@/components/Contanct/ContactText";
 import Creator from "@/components/Creator/Creator";
-import Footer from "@/components/Footer/Footer";
-import Header from "@/components/Header/Header";
 import Hero from "@/components/Hero/Hero";
 import Slider from "@/components/Slider/Slider";
 import Stats from "@/components/Stats/Stats";
-import Short from "@/components/Video/Short";
 import VideoTestimonial from "@/components/VideoTestimonial/VideoTestimonial";
 
 import { getHome } from "@/sanity/sanity-utils";
