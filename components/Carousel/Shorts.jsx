@@ -10,6 +10,7 @@ import "slick-carousel/slick/slick-theme.css";
 //Components
 import Slider from "react-slick";
 import Short from "../Video/Short";
+import "./shorts.css"
 
 //Icons
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
@@ -20,11 +21,12 @@ const Shorts = ({ shorts }) => {
   const settings = {
     dots: false,
     speed: 500,
-    slidesToShow: 4,
+    slidesToShow: 3,
     slidesToScroll: 1,
     arrows: false,
     swipeToSlide: true,
     autoplay: true,
+    centerMode: true,
     autoplaySpeed: 1500,
     responsive: [
       {
@@ -60,7 +62,7 @@ const Shorts = ({ shorts }) => {
           }}
         >
           {shorts.map((short, i) => (
-            <div className="w-80 p-5" key={i}>
+            <div className="w-80 m-5" key={i}>
               <Short videoId={short.videoId} />
             </div>
           ))}

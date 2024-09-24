@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 
 //Children will be the elements Slider loop through 
 
-const Slider = ({ children }) => {
+const Slider = ({ children, gap }) => {
 
   const duplicatedSlides = [...children, ...children];
-  const containerLength = children.length * 30;
+  const containerLength = children.length * gap;
 
   return (
     <div style={{

@@ -1,0 +1,11 @@
+.slick-center {
+    transform: scale(1.1);
+    /* Example: make the center item larger */
+    opacity: 1;
+    /* Example: make the center item fully opaque */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.slick-slide {
+    transition: transform 0.3s ease;
+}
