@@ -18,7 +18,7 @@ const Short = ({ videoId }) => {
                     src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}`}
                     allow="autoplay"
                     allowFullScreen
-                    loading="lazy" // Optimize loading
+                    loading="eager"
                     className={`absolute top-0 left-0 w-full h-full  ${isLoading ? 'hidden' : ''}`}
                     onLoad={handleIframeLoad}
                 ></iframe>
