@@ -17,7 +17,7 @@ const Testimonial = async ({ channelId, testimonial }) => {
                     />
                     <div>
                         <h1 className="text-3xl font-extrabold text-nowrap">{user.username}</h1>
-                        <p className="text-2xl font-mono">{user.subCount} Subscribers</p>
+                        <p className="text-2xl font-mono">{user.subCount.toLocaleString('de-DE')} Subscribers</p>
                     </div>
 
                 </div>
