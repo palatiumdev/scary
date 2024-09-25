@@ -67,6 +67,7 @@ export async function getResume() {
             _createdAt,
             "profileImage": profileImage.asset->url,
             aboutTitle,
+            aboutCount,
             aboutText[] {
                 ...  // Fetches the array of block content
             },

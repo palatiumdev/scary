@@ -14,6 +14,12 @@ const resume = {
             type: 'string',
         },
         {
+            name: 'aboutCount',
+            title: 'About title',
+            type: 'string',
+        },
+
+        {
             name: 'aboutText',
             title: 'About text',
             type: "array",
