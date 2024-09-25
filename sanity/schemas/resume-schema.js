@@ -15,10 +15,9 @@ const resume = {
         },
         {
             name: 'aboutCount',
-            title: 'About title',
+            title: 'About count',
             type: 'string',
         },
-
         {
             name: 'aboutText',
             title: 'About text',

@@ -22,7 +22,7 @@ export default async function Home() {
                     </div>
                     <div className="col-span-2">
                         <h1 className="text-3xl lg:text-4xl">{resume[0].aboutTitle}</h1>
-                        <p>{resume[0].aboutCount} followers</p>
+                        <p className="text-2xl lg:text-3xl font-mono">{resume[0].aboutCount} followers</p>
                         <div className="text-2xl lg:text-3xl font-mono">
                             <PortableText value={resume[0].aboutText} />
                         </div>
