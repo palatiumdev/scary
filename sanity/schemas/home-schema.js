@@ -15,7 +15,6 @@ const home = {
                     // ...,
                     {
                         type: 'textColor',
-                        type: 'highlightColor',
                     },
                 ],
             }
