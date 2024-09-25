@@ -7,7 +7,17 @@ const home = {
         {
             name: "heroText",
             title: "Hero text",
-            type: "string"
+            type: 'block',
+            marks: {
+                // ...,
+                annotations: [
+                    // ...,
+                    {
+                        type: 'textColor',
+                        type: 'highlightColor',
+                    },
+                ],
+            }
         },
         {
             name: "heroButtonText",

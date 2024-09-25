@@ -6,17 +6,29 @@ import Slider from "@/components/Slider/Slider";
 import Stats from "@/components/Stats/Stats";
 import Short from "@/components/Video/Short";
 import VideoTestimonial from "@/components/VideoTestimonial/VideoTestimonial";
+import { PortableText } from '@portabletext/react'
 
 import { getHome } from "@/sanity/sanity-utils";
 
 export default async function Home() {
   const home = await getHome();
 
+  const myPortableTextComponents = {
+    // ...,
+    marks: {
+      textColor: ({ children, value }) => <span style={{ color: value.value }}>{children}</span>,
+      highlightColor: ({ children, value }) => (
+        <span style={{ background: value.value }}>{children}</span>
+      ),
+    },
+  }
+
+
   return (
     <main className="flex min-h-screen flex-col items-center gap-32 pb-32 px-5 lg:px-16 xl:px-32">
       <div className="grid gap-8">
         <Hero
-          heroText={home[0]?.heroText}
+          heroText={<PortableText value={home[0]?.heroText} components={myPortableTextComponents} />}
           heroButtonText={home[0]?.heroButtonText}
           heroVideo={home[0]?.heroVideoUrl}
         />
