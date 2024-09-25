@@ -13,9 +13,7 @@ const config = defineConfig({
     plugins: [structureTool(), simplerColorInput({
         defaultColorFormat: 'rgba',
         defaultColorList: [
-            { label: 'White', value: '#fffffb' },
-            { label: 'Black', value: '#000000' },
-            { label: 'Yellow', value: '#FFC145' },
+            { label: 'Orange', value: '#de7412' },
             { label: 'Custom...', value: 'custom' },
         ],
         enableSearch: true,
