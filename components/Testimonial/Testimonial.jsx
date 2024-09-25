@@ -12,8 +12,8 @@ const Testimonial = async ({ channelId, testimonial }) => {
                 <div className="flex items-center gap-4">
                     <Image
                         src={user.profileImage}
-                        width={testimonial ? "60" : "80"}
-                        height={testimonial ? "60" : "80"}
+                        width={testimonial ? "60" : "90"}
+                        height={testimonial ? "60" : "90"}
                         className="rounded-full"
                     />
                     <div>
