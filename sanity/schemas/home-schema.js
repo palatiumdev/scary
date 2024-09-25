@@ -7,7 +7,8 @@ const home = {
         {
             name: "heroText",
             title: "Hero text",
-            type: 'block',
+            type: 'array',
+            of: [{ type: 'block' }],
             marks: {
                 // ...,
                 annotations: [
