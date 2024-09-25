@@ -17,7 +17,7 @@ const Creator = async ({ channelId }) => {
             </div>
             <div>
                 <h1 className="text-3xl font-extrabold">{user.username}</h1>
-                <p className="text-2xl font-extrabold text-primary font-mono">{user.subCount} subs</p>
+                <p className="text-2xl font-extrabold text-primary font-mono">{user.subCount.toLocaleString('de-DE')} subs</p>
             </div>
         </div>
     )

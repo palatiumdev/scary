@@ -25,7 +25,7 @@ export default async function getCreator(channelId, tiktokUserId) {
         const usernameData = await usernameResponse.json();
 
         const responseData = {
-            subCount: Number(subsData.items[0].statistics.subscriberCount).toLocaleString('de-DE'),
+            subCount: Number(subsData.items[0].statistics.subscriberCount),
             profileImage: picData.items[0].snippet.thumbnails.medium.url,
             username: usernameData.items[0].brandingSettings.channel.title,
         };

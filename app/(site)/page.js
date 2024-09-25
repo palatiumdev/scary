@@ -1,14 +1,13 @@
-import Shorts from "@/components/Carousel/Shorts";
 import ContactText from "@/components/Contanct/ContactText";
 import Creator from "@/components/Creator/Creator";
 import Hero from "@/components/Hero/Hero";
 import Slider from "@/components/Slider/Slider";
 import Stats from "@/components/Stats/Stats";
-import Short from "@/components/Video/Short";
 import VideoTestimonial from "@/components/VideoTestimonial/VideoTestimonial";
 import { PortableText } from '@portabletext/react'
 
 import { getHome } from "@/sanity/sanity-utils";
+import Video from "@/components/Video/Video";
 
 export default async function Home() {
   const home = await getHome();
@@ -38,7 +37,7 @@ export default async function Home() {
             maskImage: "linear-gradient(to right, transparent, black, black, transparent)",
           }}
         >
-          <Slider gap={30}>
+          <Slider velocity={100}>
             {home[0]?.creators.map((creator, i) => (
               <Creator channelId={creator.channelId} key={i} />
             ))}
@@ -53,8 +52,6 @@ export default async function Home() {
 
       <div className="w-full flex flex-col items-center gap-8">
         <h1 className="text-5xl text-primary">Shorts</h1>
-        {/*         <Shorts shorts={home[0]?.shorts} />
- */}
         {/* If you want to display the shorts in a separate slider, keep this block */}
         <div
           className="w-[80vw] overflow-clip grid place-content-center"
@@ -62,10 +59,10 @@ export default async function Home() {
             maskImage: "linear-gradient(to right, transparent, black, black, transparent)",
           }}
         >
-          <Slider gap={20}>
+          <Slider velocity={100}>
             {home[0]?.shorts.map((short, i) => (
-              <div className="w-80 m-5" key={i}>
-                <Short videoId={short.videoId} />
+              <div className="w-96" key={i}>
+                <Video videoId={short.videoId} isShort={true} />
               </div>
             ))}
           </Slider>

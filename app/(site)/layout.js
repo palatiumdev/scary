@@ -16,7 +16,7 @@ export default async function RootLayout({ children }) {
 
   return (
     <html lang="en">
-      <body className={`${tommy.variable} ${regular.variable} font-sans bg-background  text-white`} >
+      <body className={`${tommy.variable} ${regular.variable} font-sans bg-background text-white`} >
         <div className='px-5 lg:px-32 py-8'>
           <Header />
         </div>

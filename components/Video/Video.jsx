@@ -11,7 +11,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 
-const Video = ({ videoId }) => {
+const Video = ({ videoId, isShort = false }) => {
     const [resolution, setResolution] = useState("maxresdefault");
 
     const handleError = () => {
@@ -33,9 +33,9 @@ const Video = ({ videoId }) => {
                 id={videoId}
                 playerClass="ytButton"
                 poster={resolution}
-                params='modestbranding=1&autoplay=1&mute=1'
-                aspectHeight={9}
-                aspectWidth={16}
+                params='modestbranding=1'
+                aspectHeight={isShort ? 16 : 9}
+                aspectWidth={isShort ? 9 : 16}
             />
         </div>
     )
