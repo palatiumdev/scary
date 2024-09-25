@@ -1,8 +1,7 @@
-import { defineConfig } from 'sanity'
 import { simplerColorInput } from 'sanity-plugin-simpler-color-input'
 
-
 import { defineConfig } from 'sanity'
+
 import { structureTool } from 'sanity/structure'
 import schemas from "./sanity/schemas"
 
