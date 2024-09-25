@@ -37,7 +37,7 @@ export default async function Home() {
             maskImage: "linear-gradient(to right, transparent, black, black, transparent)",
           }}
         >
-          <Slider velocity={100}>
+          <Slider velocity={100} gap={220}>
             {home[0]?.creators.map((creator, i) => (
               <Creator channelId={creator.channelId} key={i} />
             ))}
@@ -59,7 +59,7 @@ export default async function Home() {
             maskImage: "linear-gradient(to right, transparent, black, black, transparent)",
           }}
         >
-          <Slider velocity={100}>
+          <Slider velocity={100} gap={170}>
             {home[0]?.shorts.map((short, i) => (
               <div className="w-96" key={i}>
                 <Video videoId={short.videoId} isShort={true} />

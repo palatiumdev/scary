@@ -2,7 +2,7 @@
 import { motion, useMotionValue, animate } from "framer-motion";
 import { useEffect, useState, useRef } from "react";
 
-const Slider2 = ({ children, velocity }) => {
+const Slider2 = ({ children, velocity, gap }) => {
   const ref = useRef(null);
 
   const [duration, setDuration] = useState(0);
@@ -52,7 +52,7 @@ const Slider2 = ({ children, velocity }) => {
   }, [velocity, duration, animation, x]);
 
   return (
-    <div className="relative w-[170rem] overflow-hidden">
+    <div className="relative overflow-hidden" style={{ width: `${gap}rem` }}>
       {/* Wrapping div for seamless looping */}
       <motion.div
         className="flex"
