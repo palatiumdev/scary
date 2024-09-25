@@ -144,7 +144,7 @@ const Client = async ({ client }) => {
             </div>
             <div className="bg-accent w-80 h-32 rounded-b-3xl text-center grid place-content-center">
                 <h1 className="text-3xl lg:text-4xl">{user.username}</h1>
-                {user.subCount && (<p className="text-2xl lg:text-3xl font-mono"> {user.subCount} subscribers</p>)}
+                {user.subCount && (<p className="text-2xl lg:text-3xl font-mono"> {user.subCount} followers</p>)}
             </div>
         </div>
     )
