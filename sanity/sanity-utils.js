@@ -88,7 +88,7 @@ export async function getResume() {
             },
             clients[] {
                 username,
-                "profileImageUrl": profileImage.asset->url,
+                "profileImage": profileImage.asset->url,
                 subCount,
                 channelId
             }
