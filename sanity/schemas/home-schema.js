@@ -5,19 +5,15 @@ const home = {
     //add fields for sanity
     fields: [
         {
-            name: "heroText",
-            title: "Hero text",
-            type: 'array',
-            of: [{ type: 'block' }],
-            marks: {
-                // ...,
-                annotations: [
-                    // ...,
-                    {
-                        type: 'textColor',
-                    },
-                ],
-            }
+            name: 'heroText',
+            title: 'Hero text',
+            type: "array",
+            of: [{
+                type: "block",
+                marks: {
+                    annotations: [{ type: 'textColor', }]
+                },
+            }]
         },
         {
             name: "heroButtonText",

@@ -27,7 +27,7 @@ export default async function Home() {
     <main className="flex min-h-screen flex-col items-center gap-32 pb-32 px-5 lg:px-16 xl:px-32">
       <div className="grid gap-8">
         <Hero
-          heroText={<PortableText value={home[0]?.heroText} components={myPortableTextComponents} />}
+          heroText={<PortableText value={home[0].heroText} components={myPortableTextComponents} />}
           heroButtonText={home[0]?.heroButtonText}
           heroVideo={home[0]?.heroVideoUrl}
         />
