@@ -62,32 +62,31 @@ export async function getMetadata() {
 // Add GROQ query for resume
 export async function getResume() {
     return client.fetch(
-        groq`*[_type == "resume"] {
-            _id,
-            _createdAt,
-            "profileImage": profileImage.asset->url,
-            boutTitle,
-            aboutText[] {
-                ...  // Fetches the array of block content
-            },
-            educationList[] {
-                "logo": logo.asset->url,
-                institution,
-                details,
-                certificate,
-                marks
-            },
-            workList[] {
-                title,
-                "logo": logo.asset->url,
-                date,
-                details,
-                info[] {
-                    ...  // Fetches the array of block content inside info
-                }
-            },
-            clients
-        }`, {}, { cache: "force-cache", next: { tags: ["resume"] } }
+        groq`*[_type == "resume"]{
+  "profileImageUrl": profileImage.asset->url,
+  aboutTitle,
+  aboutText,
+  educationList[]{
+    "institution": institution,
+    "details": details,
+    "certificate": certificate,
+    "marks": marks,
+    "logoUrl": logo.asset->url
+  },
+  workList[]{
+    "title": title,
+    "date": date,
+    "details": details,
+    "logoUrl": logo.asset->url,
+    info
+  },
+  clients[]{
+    "username": username,
+    "profileImageUrl": profileImage.asset->url,
+    "subCount": subCount,
+    "channelId": channelId
+  }
+}`, {}, { cache: "force-cache", next: { tags: ["resume"] } }
     );
 }
 
