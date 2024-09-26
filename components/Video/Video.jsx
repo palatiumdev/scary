@@ -21,22 +21,24 @@ const Video = ({ videoId, isShort = false }) => {
 
     return (
 
-        <div className='rounded-3xl overflow-clip'>
+        <div>
             <Image
                 src={`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`}
                 height={0}
                 width={0}
                 onError={handleError}
             />
+            <div className='rounded-3xl overflow-clip'>
+                <LiteYouTubeEmbed
+                    id={videoId}
+                    playerClass="ytButton"
+                    poster={resolution}
+                    params='modestbranding=1'
+                    aspectHeight={isShort ? 16 : 9}
+                    aspectWidth={isShort ? 9 : 16}
+                />
 
-            <LiteYouTubeEmbed
-                id={videoId}
-                playerClass="ytButton"
-                poster={resolution}
-                params='modestbranding=1'
-                aspectHeight={isShort ? 16 : 9}
-                aspectWidth={isShort ? 9 : 16}
-            />
+            </div>
         </div>
     )
 }
