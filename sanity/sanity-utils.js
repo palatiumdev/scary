@@ -30,13 +30,7 @@ export async function getHome() {
                 channelId,
                 testimonial
             },
-            shortsTestimonials[] {
-                Title,
-                videoId,
-                Username,
-                channelId,
-                testimonial
-            },
+            shortsTestimonials,
             shorts[] {
                 videoId,
                 title
@@ -124,6 +118,6 @@ export async function getClients() {
                 subCount,
                 channelId
             }
-        }`, {}, { revalidate: 500 }
+        }`, {}, { cache: "force-cache", next: { tags: ["clients"] } }
     );
 }
