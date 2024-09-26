@@ -57,6 +57,23 @@ const home = {
             ]
         },
         {
+            title: 'Shorts testimonials',
+            name: 'shortsTestimonials',
+            type: 'array',
+            of: [{
+                type: "object",
+                name: "shortsTestimonial",
+                fields: [
+                    { type: "string", name: "Title" },
+                    { type: "string", name: "videoId" },
+                    { type: "string", name: "Username" },
+                    { type: "string", name: "channelId" },
+                    { type: "string", name: "testimonial" },
+                ]
+            }
+            ]
+        },
+        {
             title: 'Shorts',
             name: 'shorts',
             type: 'array',

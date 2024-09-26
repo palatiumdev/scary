@@ -50,9 +50,11 @@ export default async function Home() {
         <VideoTestimonial videos={home[0]?.videos} />
       </div>
 
-      <div className="w-full flex flex-col items-center gap-8">
-        <h1 className="text-5xl text-primary">Shorts</h1>
-        {/* If you want to display the shorts in a separate slider, keep this block */}
+      <div className="w-full flex flex-col items-center gap-16">
+        <div className="w-full flex flex-col items-center gap-8">
+          <h1 className="text-5xl text-primary">Shorts</h1>
+          <VideoTestimonial videos={home[0]?.shortsTestimonials} />
+        </div>
         <div
           className="w-[80vw] overflow-clip grid place-content-center"
           style={{

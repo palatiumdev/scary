@@ -14,6 +14,7 @@ const VideoTestimonial = ({ videos }) => {
                         <Testimonial
                             channelId={video.channelId}
                             testimonial={video.testimonial}
+                            videoId={video.videoId}
                         />
                     </div>
                 </div>

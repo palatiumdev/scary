@@ -30,6 +30,13 @@ export async function getHome() {
                 channelId,
                 testimonial
             },
+            shortsTestimonials[] {
+                Title,
+                videoId,
+                Username,
+                channelId,
+                testimonial
+            },
             shorts[] {
                 videoId,
                 title
@@ -87,12 +94,6 @@ export async function getResume() {
                     ...  // Fetches the array of block content inside info
                 }
             },
-            clients[] {
-                username,
-                "profileImage": profileImage.asset->url,
-                subCount,
-                channelId
-            }
         }`, {}, { cache: "force-cache", next: { tags: ["resume"] } }
     );
 }
@@ -105,9 +106,24 @@ export async function getServices() {
             services[] {
                 "icon": icon.asset->url,
                 text,
-            }
+            },
         }`,
         {},
         { cache: "force-cache", next: { tags: ["services"] } }
+    );
+}
+
+export async function getClients() {
+    return client.fetch(
+        groq`*[_type == "clients"] {
+            _id,
+            _createdAt,
+            clients[] {
+                username,
+                "profileImage": profileImage.asset->url,
+                subCount,
+                channelId
+            }
+        }`, {}, { revalidate: 500 }
     );
 }
