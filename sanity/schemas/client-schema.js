@@ -1,4 +1,4 @@
-const resume = {
+const clients = {
     name: "clients",
     title: "Clients",
     type: "document",
@@ -22,4 +22,4 @@ const resume = {
     ]
 }
 
-export default resume;
+export default clients;

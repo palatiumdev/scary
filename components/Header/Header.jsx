@@ -55,11 +55,12 @@ const Header = () => {
                                     <li className="flex font-mono items-center gap-5 text-xl">
                                         <Link href="/resume" >Resume</Link>
                                     </li>
-                                    <li className="flex font-mono items-center gap-5 text-xl">
-                                        <Link href="/services" >Services</Link>
-                                    </li>
+
                                     <li className="flex font-mono items-center gap-5 text-xl">
                                         <Link href="/clients" >Clients</Link>
+                                    </li>
+                                    <li className="flex font-mono items-center gap-5 text-xl">
+                                        <Link href="/services" >Services</Link>
                                     </li>
                                     <hr className="w-full" />
                                     <li className="flex font-mono items-center gap-3 text-xl cursor-pointer" onClick={() => { window.open("https://x.com/ScaryAM__", "_blank") }}>
@@ -92,8 +93,8 @@ const Header = () => {
                         <div className="flex gap-8 items-center content-center">
                             <Link href="/" className="hover:text-primary">Home</Link>
                             <Link href="/resume" className="hover:text-primary">Resume</Link>
-                            <Link href="/services" className="hover:text-primary">Services</Link>
                             <Link href="/clients" className="hover:text-primary">Clients</Link>
+                            <Link href="/services" className="hover:text-primary">Services</Link>
                         </div>
                     </div>
                     <div className="flex items-center content-center gap-8">
