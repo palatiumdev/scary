@@ -1,13 +1,13 @@
 import Video from '../Video/Video'
 import Testimonial from '../Testimonial/Testimonial'
 
-const VideoTestimonial = ({ videos }) => {
+const ShortTestimonial = ({ videos }) => {
 
     return (
-        <div className="grid grid-cols-2 gap-8">
+        <div className="grid gap-16">
             {videos.map((video, i) => (
-                <div className="grid grid-cols-2 place-items-center gap-8 w-full" key={i}>
-                    <div className={`w-full ${i % 2 === 0 ? "order-1" : "order-0"}`}>
+                <div className="grid grid-cols-1 lg:grid-cols-2 place-items-center lg:gap-16 gap-8 w-full" key={i}>
+                    <div className="w-full">
                         <Video videoId={video.videoId} />
                     </div>
                     <div className="w-full grid place-content-center">
@@ -18,11 +18,10 @@ const VideoTestimonial = ({ videos }) => {
                         />
                     </div>
                 </div>
-            ))
-            }
+            ))}
 
-        </div >
+        </div>
     )
 }
 
-export default VideoTestimonial
+export default ShortTestimonial

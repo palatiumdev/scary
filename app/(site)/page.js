@@ -8,6 +8,7 @@ import { PortableText } from '@portabletext/react'
 
 import { getHome } from "@/sanity/sanity-utils";
 import Video from "@/components/Video/Video";
+import ShortTestimonial from "@/components/ShortTestimonial/ShortTestimonial";
 
 export default async function Home() {
   const home = await getHome();
@@ -23,7 +24,7 @@ export default async function Home() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center gap-32 pb-32 px-5 lg:px-16 xl:px-32">
+    <main className="flex min-h-screen flex-col items-center gap-32 pb-32 px-5 lg:px-16">
       <div className="grid gap-8">
         <Hero
           heroText={<PortableText value={home[0].heroText} components={myPortableTextComponents} />}
@@ -53,7 +54,7 @@ export default async function Home() {
       <div className="w-full flex flex-col items-center gap-16">
         <div className="w-full flex flex-col items-center gap-8">
           <h1 className="text-5xl text-primary">Shorts</h1>
-          <VideoTestimonial videos={home[0]?.shortsTestimonials} />
+          <ShortTestimonial videos={home[0]?.shortsTestimonials} />
         </div>
         <div
           className="w-[80vw] overflow-clip grid place-content-center"
