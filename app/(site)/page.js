@@ -48,7 +48,7 @@ export default async function Home() {
 
       <div className="grid place-items-center w-full gap-8">
         <h1 className="text-5xl text-primary">Work</h1>
-        <VideoTestimonial videos={home[0]?.videos} />
+        <ShortTestimonial videos={home[0]?.videos} />
       </div>
 
       <div className="w-full flex flex-col items-center gap-16">
