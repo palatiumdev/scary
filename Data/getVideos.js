@@ -1,27 +1,30 @@
-export default async function getVideos(playlistId) {
-
-    const revalidationTTL = 3600;
-
+export default async function getLikes(videoId) {
     const API_KEY = process.env.API_KEY;
+    const VIDEO_STATS_URL = `https://www.googleapis.com/youtube/v3/videos?part=statistics&id=${videoId}&key=${API_KEY}`;
 
-    const PLAYLIST_URL = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=50&playlistId=${playlistId}&key=${API_KEY}`;
+    try {
+        // Fetch the video stats without revalidation
+        const statsResponse = await fetch(VIDEO_STATS_URL);
 
-    const playlistResponse = await fetch(PLAYLIST_URL, {}, { next: { revalidate: revalidationTTL } })
+        if (!statsResponse.ok) {
+            throw new Error('Failed to fetch video statistics');
+        }
 
+        const statsData = await statsResponse.json();
 
-    if (!playlistResponse.ok) {
-        throw new Error('Failed to fetch data');
+        // Check if video data is available
+        if (statsData.items.length === 0) {
+            throw new Error('No data found for the provided video ID');
+        }
+
+        // Get the like count for the video
+        const likes = statsData.items[0].statistics.likeCount;
+
+        // Return likes as a number
+        return Number(likes);
+
+    } catch (error) {
+        console.error('Error fetching video likes:', error);
+        throw error;
     }
-
-    const playlistData = await playlistResponse.json();
-
-    let videos = [];
-
-    for (let i = 0; i < playlistData.pageInfo.totalResults; i++) {
-        videos.push(playlistData.items[i].snippet.resourceId.videoId)
-    }
-
-    const responseData = videos;
-
-    return responseData;
 }

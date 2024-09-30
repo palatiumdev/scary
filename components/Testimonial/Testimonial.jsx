@@ -10,6 +10,7 @@ const Testimonial = async ({ channelId, testimonial, videoId }) => {
     const user = await getCreator(channelId)
     let likes;
     let views;
+
     if (!testimonial) {
         likes = await getLikes(videoId);
         views = await getViews(videoId);
