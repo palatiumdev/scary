@@ -32,18 +32,21 @@ export default async function Home() {
           heroVideo={home[0]?.heroVideoUrl}
         />
 
-        <div
-          className="w-[80vw] overflow-clip grid place-content-center"
-          style={{
-            maskImage: "linear-gradient(to right, transparent, black, black, transparent)",
-          }}
-        >
-          <Slider velocity={100} gap={220}>
-            {home[0]?.creators.map((creator, i) => (
-              <Creator channelId={creator.channelId} key={i} />
-            ))}
-          </Slider>
+        <div className="grid w-full place-content-center">
+          <div
+            className="w-[80vw] overflow-clip grid place-content-center"
+            style={{
+              maskImage: "linear-gradient(to right, transparent, black, black, transparent)",
+            }}
+          >
+            <Slider velocity={100} gap={220}>
+              {home[0]?.creators.map((creator, i) => (
+                <Creator channelId={creator.channelId} key={i} />
+              ))}
+            </Slider>
+          </div>
         </div>
+
       </div>
 
       <div className="grid place-items-center w-full gap-8">
