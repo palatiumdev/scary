@@ -24,12 +24,15 @@ async function getViews(videoId) {
             throw new Error(`Invalid view count for video ID: ${videoId}`);
         }
 
+        console.log("Views fetched", viewCount)
+
         return viewCount;
 
     } catch (error) {
         console.error(`Error fetching statistics for video ${videoId}:`, error);
         return 0; // Default to 0 if any error occurs
     }
+
 }
 
 export default getViews;
