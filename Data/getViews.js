@@ -24,8 +24,6 @@ async function getViews(videoId) {
             throw new Error(`Invalid view count for video ID: ${videoId}`);
         }
 
-        console.log("Views fetched", viewCount)
-
         return viewCount;
 
     } catch (error) {
