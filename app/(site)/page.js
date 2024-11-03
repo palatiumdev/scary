@@ -51,12 +51,8 @@ export default async function Home() {
       </div>
 
       <div className="grid place-items-center w-full gap-8">
-        <h1 className="text-5xl text-primary">Results</h1>
-        <Showcase videos={home[0]?.showcase} text={home[0]?.showcaseText} />
-      </div>
-
-      <div className="grid place-items-center w-full gap-8">
         <h1 className="text-5xl text-primary">Work</h1>
+        <Showcase videos={home[0]?.showcase} text={home[0]?.showcaseText} />
         <VideoTestimonial videos={home[0]?.videos} />
       </div>
 
