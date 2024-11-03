@@ -40,6 +40,25 @@ const home = {
             ]
         },
         {
+            title: 'Showcase',
+            name: 'showcase',
+            type: 'array',
+            of: [{
+                type: "object",
+                name: "video",
+                fields: [
+                    { type: "string", name: "Title" },
+                    { type: "string", name: "videoId" },
+                ]
+            }
+            ]
+        },
+        {
+            name: "showcaseText",
+            title: "Showcase text",
+            type: "string"
+        },
+        {
             title: 'Videos',
             name: 'videos',
             type: 'array',

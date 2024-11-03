@@ -7,7 +7,7 @@ const Showcase = ({ videos, text }) => {
         <div className="grid xl:grid-cols-2 w-full px-5 lg:px-56 gap-16 place-items-center">
             <div className="grid gap-8 w-full">
                 <div>
-                    <Video videoId={videos[0].videoId} />
+                    <Video videoId={videos[0]?.videoId} />
                 </div>
                 <div className={`w-full grid grid-cols-${videos.length - 1} gap-8`}>
 
@@ -15,7 +15,7 @@ const Showcase = ({ videos, text }) => {
                         if (i != 0) {
                             return (
                                 <div key={i}>
-                                    <Video videoId={videos[i].videoId} />
+                                    <Video videoId={videos[i]?.videoId} />
                                 </div>
                             )
                         }
