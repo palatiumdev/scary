@@ -9,7 +9,7 @@ export default async function Home() {
     return (
         <div className="grid place-items-center w-full gap-8">
             <h1 className="text-5xl text-primary grid">Clients</h1>
-            <div className="grid place-items-center place-content-center w-full gap-8 lg:grid-cols-2 2xl:grid-cols-4">
+            <div className="flex place-items-center place-content-center w-full gap-8 flex-wrap px-24">
                 {clientList?.map((client, i) => (
                     <Client key={i} client={client} />
                 ))}

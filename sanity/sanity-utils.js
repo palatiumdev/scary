@@ -23,6 +23,11 @@ export async function getHome() {
                 Username,
                 channelId
             },
+            showcase[] {
+                Title,
+                videoId,
+            },
+            showcaseText,
             videos[] {
                 Title,
                 videoId,

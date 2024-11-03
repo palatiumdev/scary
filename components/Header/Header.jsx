@@ -24,7 +24,7 @@ const Header = () => {
 
         //Mobile
         return (
-            <div className="h-full w-full rounded-3xl bg-black text-white  z-50">
+            <div className="h-full w-full rounded-3xl bg-black text-white z-50">
                 <div className="overflow-y-clip flex h-24 px-10" >
                     <div className="grid place-content-center h-full pb-2">
                         <GiPumpkin size={40} />
@@ -83,7 +83,7 @@ const Header = () => {
 
         //Desktop
         return (
-            <div className="grid h-24 px-10 z-50 rounded-3xl bg-BGaccent text-white">
+            <div className="grid h-24 px-10 w-full z-50 rounded-3xl bg-BGaccent text-white">
                 <div className="flex w-full justify-between text-2xl font-bold">
                     <div className="w-full flex gap-8">
                         <div className="grid place-content-center h-full pb-2">

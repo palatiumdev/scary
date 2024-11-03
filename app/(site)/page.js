@@ -9,6 +9,7 @@ import { PortableText } from '@portabletext/react'
 import { getHome } from "@/sanity/sanity-utils";
 import Video from "@/components/Video/Video";
 import ShortTestimonial from "@/components/ShortTestimonial/ShortTestimonial";
+import Showcase from "@/components/Showcase/Showcase";
 
 export default async function Home() {
   const home = await getHome();
@@ -47,6 +48,11 @@ export default async function Home() {
           </div>
         </div>
 
+      </div>
+
+      <div className="grid place-items-center w-full gap-8">
+        <h1 className="text-5xl text-primary">Results</h1>
+        <Showcase videos={home[0]?.showcase} text={home[0]?.showcaseText} />
       </div>
 
       <div className="grid place-items-center w-full gap-8">

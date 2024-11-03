@@ -9,13 +9,14 @@ const Footer = ({ footerBackgroundText }) => {
                     {footerBackgroundText}
                 </h1>
             </div>
-            <div className="absolute bottom-0 text-center right-0 left-0 grid place-items-center">
-                <p className="text-base font-mono">
+            <div className="absolute bottom-0 text-center right-0 left-0 grid place-items-center mb-5">
+                <p className="font-mono text-xl">
                     Built by{" "}
                     <a
                         href="https://x.com/PalatiumDev"
                         target="_blank"
                         rel="noopener noreferrer"
+                        className="text-primary"
                     >
                         @PalatiumDev
                     </a>
