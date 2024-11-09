@@ -47,7 +47,7 @@ export async function getHome() {
             contact,
             contactButtonText,
             footerBackgroundText,
-        }`, {}, { revalidate: 100 }
+        }`, {}, { cache: "force-cache", next: { tags: ["home"] } }
     );
 }
 
