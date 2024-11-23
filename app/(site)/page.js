@@ -55,6 +55,7 @@ export default async function Home() {
         {home[0]?.showcase.map((showcaseItem, i) => {
           return <Showcase videos={showcaseItem.showcaseVideos} text={showcaseItem.showcaseText} key={i} />
         })}
+
         <VideoTestimonial videos={home[0]?.videos} />
       </div>
 
