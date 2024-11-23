@@ -3,6 +3,7 @@
 import Video from "../Video/Video"
 
 const Showcase = ({ videos, text }) => {
+    console.log("auto", videos)
     return (
         <div className="grid xl:grid-cols-2 w-full px-5 lg:px-56 gap-16 place-items-center">
             <div className="grid gap-8 w-full">
