@@ -45,18 +45,27 @@ const home = {
             type: 'array',
             of: [{
                 type: "object",
-                name: "video",
+                name: "showcase",
                 fields: [
                     { type: "string", name: "Title" },
-                    { type: "string", name: "videoId" },
+                    {
+                        title: 'Showcase Videos',
+                        name: 'showcaseVideos',
+                        type: 'array',
+                        of: [{
+                            type: "object",
+                            name: "video",
+                            fields: [
+                                { type: "string", name: "Title" },
+                                { type: "string", name: "videoId" },
+                            ]
+                        }
+                        ]
+                    },
+                    { type: "string", name: "showcaseText" },
                 ]
             }
             ]
-        },
-        {
-            name: "showcaseText",
-            title: "Showcase text",
-            type: "string"
         },
         {
             title: 'Videos',
@@ -139,3 +148,4 @@ const home = {
 }
 
 export default home;
+
