@@ -14,7 +14,8 @@ export default async function getLikes(videoId) {
 
         // Check if video data is available
         if (statsData.items.length === 0) {
-            throw new Error('No data found for the provided video ID');
+            console.log(videoId)
+            throw new Error('No data found for the provided video ID ');
         }
 
         // Get the like count for the video

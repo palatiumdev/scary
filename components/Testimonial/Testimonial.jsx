@@ -12,8 +12,10 @@ const Testimonial = async ({ channelId, testimonial, videoId }) => {
     let views;
 
     if (!testimonial) {
-        likes = await getLikes(videoId);
-        views = await getViews(videoId);
+        if (videoId != "") {
+            likes = await getLikes(videoId);
+            views = await getViews(videoId);
+        }
     }
 
     return (

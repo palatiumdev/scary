@@ -1,10 +1,7 @@
-"use client"
-
 import Testimonial from "../Testimonial/Testimonial"
 import Video from "../Video/Video"
 
 const Showcase = ({ videos, text, channelId, testimonial, }) => {
-    console.log("auto", videos.length - 1)
 
     return (
         <div className="grid xl:grid-cols-2 w-full px-5 lg:px-56 gap-16 place-items-center">
@@ -41,5 +38,8 @@ const Showcase = ({ videos, text, channelId, testimonial, }) => {
         </div>
     )
 }
+
+
+
 
 export default Showcase
