@@ -11,7 +11,7 @@ const Showcase = ({ videos, text }) => {
                 <div>
                     <Video videoId={videos[0]?.videoId} />
                 </div>
-                <div className={`w-full grid grid-cols-${videos.length - 1} gap-8`}>
+                <div className={`w-full grid gap-8`} style={{ gridTemplateColumns: `repeat(${videos.length - 1}, minmax(0, 1fr));`, }}>
 
                     {videos.map((video, i) => {
                         if (i != 0) {
