@@ -58,6 +58,8 @@ const home = {
                             fields: [
                                 { type: "string", name: "Title" },
                                 { type: "string", name: "videoId" },
+                                { type: "string", name: "channelId" },
+                                { type: "string", name: "testimonial" },
                             ]
                         }
                         ]
