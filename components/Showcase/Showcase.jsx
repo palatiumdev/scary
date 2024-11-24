@@ -1,8 +1,9 @@
 "use client"
 
+import Testimonial from "../Testimonial/Testimonial"
 import Video from "../Video/Video"
 
-const Showcase = ({ videos, text }) => {
+const Showcase = ({ videos, text, channelId, testimonial, }) => {
     console.log("auto", videos.length - 1)
 
     return (
@@ -25,17 +26,17 @@ const Showcase = ({ videos, text }) => {
                 </div>
 
             </div>
-            <div>
+            <div className="grid gap-8">
                 <div className="bg-accent/50 rounded-3xl p-10 grid gap-4 max-w-[40rem] 2xl:w-[40rem] min-h-fit place-content-center text-6xl font-extrabold text-center">
                     <p>{text}</p>
                 </div>
-                <div className="w-full grid place-content-center">
+                {testimonial && (<div className="w-full grid place-content-center">
                     <Testimonial
-                        channelId={video.channelId}
-                        testimonial={video.testimonial}
-                        videoId={video.videoId}
+                        channelId={channelId}
+                        testimonial={testimonial}
+                        videoId={""}
                     />
-                </div>
+                </div>)}
             </div>
         </div>
     )
