@@ -25,7 +25,7 @@ export async function getHome() {
             },
             showcase[] {
                 Title,
-                showcaseVideos[] {Title, videoId},
+                showcaseVideos[] {Title, videoId, isShort},
                 showcaseText,
                 channelId,
                 testimonial

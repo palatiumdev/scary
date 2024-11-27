@@ -58,6 +58,7 @@ const home = {
                             fields: [
                                 { type: "string", name: "Title" },
                                 { type: "string", name: "videoId" },
+                                { type: "boolean", name: "isShort" },
                             ]
                         }
                         ]
