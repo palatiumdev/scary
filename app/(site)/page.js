@@ -50,9 +50,9 @@ export default async function Home() {
 
       </div>
 
-      <div className="grid place-items-center w-full gap-8">
+      <div className="grid place-items-center w-full gap-24">
         <h1 className="text-5xl text-primary">Work</h1>
-        <div className="grid gap-8">
+        <div className="grid gap-24">
           {home[0]?.showcase.map((showcaseItem, i) => {
             return <Showcase videos={showcaseItem.showcaseVideos} text={showcaseItem.showcaseText} testimonial={showcaseItem.testimonial} channelId={showcaseItem.channelId} isShort={showcaseItem.isShort} key={i} />
           })}

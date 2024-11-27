@@ -11,7 +11,7 @@ const Showcase = ({ videos, text, channelId, testimonial, isShort }) => {
     }
 
     let shortsSpan;
-    isShort ? shortsSpan = 2 : shortsSpan = 1;
+    isShort ? shortsSpan = true : shortsSpan = false;
 
     return (
         <div className="grid xl:grid-cols-2 w-full px-5 lg:px-56 gap-16 place-items-center">
@@ -19,13 +19,13 @@ const Showcase = ({ videos, text, channelId, testimonial, isShort }) => {
                 <div>
                     <Video videoId={videos[0]?.videoId} />
                 </div>
-                <div className={`w-full grid gap-8 border-red-500 border`} style={{ gridTemplateColumns: `repeat(${videoCols}, minmax(0, 1fr));` }} >
+                <div className={`w-full grid gap-8`} style={{ gridTemplateColumns: `repeat(${videoCols}, minmax(0, 1fr));` }} >
 
                     {videos.map((video, i) => {
                         if (i != 0) {
                             return (
-                                <div key={i} className=" border ">
-                                    <Video videoId={videos[i]?.videoId} isShort={isShort} />
+                                <div key={i}>
+                                    <Video videoId={videos[i]?.videoId} isShort={videos[i]?.isShort} />
                                 </div>
                             )
                         }
@@ -33,8 +33,8 @@ const Showcase = ({ videos, text, channelId, testimonial, isShort }) => {
                 </div>
 
             </div>
-            <div className="grid gap-8">
-                <div className="bg-accent/50 rounded-3xl p-10 grid gap-4 max-w-[40rem] 2xl:w-[40rem] min-h-fit place-content-center text-6xl font-extrabold text-center">
+            <div className="flex flex-col gap-8 h-full">
+                <div className="bg-accent/50 rounded-3xl p-10 grid gap-4 max-w-[40rem] 2xl:w-[40rem] h-full place-content-center text-6xl  font-extrabold text-center">
                     <p>{text}</p>
                 </div>
                 {testimonial && (<div className="w-full grid place-content-center">
