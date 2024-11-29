@@ -72,7 +72,7 @@ export default async function Home() {
             maskImage: "linear-gradient(to right, transparent, black, black, transparent)",
           }}
         >
-          <Slider velocity={100} gap={170}>
+          <Slider velocity={100} gap={200}>
             {home[0]?.shorts.map((short, i) => (
               <div className="w-96" key={i}>
                 <Video videoId={short.videoId} isShort={true} />
