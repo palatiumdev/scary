@@ -19,12 +19,12 @@ const Showcase = ({ videos, text, channelId, testimonial, isShort }) => {
                 <div>
                     <Video videoId={videos[0]?.videoId} />
                 </div>
-                <div className={`w-full grid gap-8`} style={{ gridTemplateColumns: `repeat(${videoCols}, minmax(0, 1fr));` }} >
+                <div className={`w-full grid gap-8 place-content-center overflow-visible `} style={{ gridTemplateColumns: `repeat(${videoCols}, minmax(0, 1fr));` }} >
 
                     {videos.map((video, i) => {
                         if (i != 0) {
                             return (
-                                <div key={i} className={`${videos[i]?.isShort ? "w-[110%]" : ""}`}>
+                                <div key={i} className={`${videos[i]?.isShort ? "w-[110%]  " : ""}`}>
                                     <Video videoId={videos[i]?.videoId} />
                                 </div>
                             )
