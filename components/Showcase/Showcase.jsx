@@ -14,17 +14,17 @@ const Showcase = ({ videos, text, channelId, testimonial, isShort }) => {
     isShort ? shortsSpan = true : shortsSpan = false;
 
     return (
-        <div className="grid xl:grid-cols-2 w-full px-5 lg:px-56 gap-16 place-items-center">
+        <div className="grid xl:grid-cols-2 w-full px-5 lg:px-56 gap-16 place-items-center  ">
             <div className="grid gap-8 w-full">
                 <div>
                     <Video videoId={videos[0]?.videoId} />
                 </div>
-                <div className={`w-full grid gap-8 place-content-center overflow-visible `} style={{ gridTemplateColumns: `repeat(${videoCols}, minmax(0, 1fr));` }} >
+                <div className={`w-full grid gap-8 place-items-center `} style={{ gridTemplateColumns: `repeat(${videoCols}, minmax(0, 1fr));` }} >
 
                     {videos.map((video, i) => {
                         if (i != 0) {
                             return (
-                                <div key={i} className={`${videos[i]?.isShort ? "w-[110%]  " : ""}`}>
+                                <div key={i} className={`${videos[i]?.isShort ? "w-[110%]    " : " w-[100%]"}`}>
                                     <Video videoId={videos[i]?.videoId} />
                                 </div>
                             )
