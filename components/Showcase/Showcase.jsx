@@ -24,8 +24,8 @@ const Showcase = ({ videos, text, channelId, testimonial, isShort }) => {
                     {videos.map((video, i) => {
                         if (i != 0) {
                             return (
-                                <div key={i}>
-                                    <Video videoId={videos[i]?.videoId} isShort={videos[i]?.isShort} />
+                                <div key={i} className={`${videos[i]?.isShort ? "w-[110%]" : ""}`}>
+                                    <Video videoId={videos[i]?.videoId} />
                                 </div>
                             )
                         }
