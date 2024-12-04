@@ -24,13 +24,14 @@ const Showcase = ({ videos, text, channelId, testimonial, isShort }) => {
                     {videos.map((video, i) => {
                         if (i != 0) {
                             return (
-                                <div key={i} className={`${videos[i]?.isShort ? "w-[110%]    " : " w-[100%]"}`}>
+                                <div key={i} className={`${videos[i]?.isShort ? "w-[110%] h-[150%]" : " w-[100%]"}`}>
                                     <Video videoId={videos[i]?.videoId} />
                                 </div>
                             )
                         }
                     })}
                 </div>
+
 
             </div>
             <div className="flex flex-col gap-8 h-full">
