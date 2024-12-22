@@ -49,7 +49,7 @@ export async function getHome() {
             contact,
             contactButtonText,
             footerBackgroundText,
-        }`, {}, { revalidate: 1 }
+        }`, {}, { cache: "force-cache", next: { tags: ["home"] } }
     );
 }
 
