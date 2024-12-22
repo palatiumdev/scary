@@ -62,8 +62,7 @@ export default async function getCreator(channelId, tiktokUserId) {
             return responseData;
 
         } catch (tiktokError) {
-            console.log('Both YouTube and TikTok APIs failed: ' + tiktokError.message);
-            throw new Error('Both YouTube and TikTok APIs failed: ' + tiktokError.message ' + channelId);
+            throw new Error('Both YouTube and TikTok APIs failed: ' + tiktokError.message + ' for channelId: ' + channelId);
         }
     }
 }
