@@ -29,7 +29,16 @@ const nextConfig = {
                 headers: [
                     {
                         key: 'Cache-Control',
-                        value: 'no-store, max-age=0, must-revalidate',
+                        value: 'public, max-age=86400', // Cache for 24 hours
+                    },
+                ],
+            },
+            {
+                source: '/', // Matches the home page
+                headers: [
+                    {
+                        key: 'Cache-Control',
+                        value: 'public, max-age=86400', // Cache for 24 hours
                     },
                 ],
             },
