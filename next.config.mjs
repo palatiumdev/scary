@@ -24,16 +24,7 @@ const nextConfig = {
     },
     async headers() {
         return [
-            {
-                source: '/clients', // Matches the /clients page
-                headers: [
-                    {
-                        key: 'Cache-Control',
-                        value: 'public, max-age=86400', // Cache for 24 hours
-                    },
-                ],
-            },
-            {
+             {
                 source: '/', // Matches the home page
                 headers: [
                     {
