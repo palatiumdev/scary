@@ -40,7 +40,7 @@ export default async function Home() {
               maskImage: "linear-gradient(to right, transparent, black, black, transparent)",
             }}
           >
-            <Slider velocity={100} gap={220}>
+            <Slider velocity={100} gap={25}>
               {home[0]?.creators.map((creator, i) => (
                 <Creator channelId={creator.channelId} key={i} />
               ))}
