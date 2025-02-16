@@ -34,7 +34,6 @@ const nextConfig = {
                 ],
             },
             {
-             {
                 source: '/', // Matches the home page
                 headers: [
                     {
