@@ -12,7 +12,7 @@ export default async function Home() {
                 <div className="grid lg:grid-cols-3 place-items-center gap-8 lg:gap-8">
                     <div className="relative size-96 rounded-3xl overflow-clip">
                         <Image
-                            src={resume[0].profileImage}
+                            src="/logo2.png"
                             fill={true}
                             className="absolute object-cover"
                         />
@@ -34,7 +34,7 @@ export default async function Home() {
                         key={i}
                         logo={educationItem.logo}
                         institution={educationItem.institution}
-                        details={educationItem.details}
+                        details={"Manhattan, NY • September 2022 - Present"}
                         certificate={educationItem.certificate}
                         marks={educationItem.marks}
                     />

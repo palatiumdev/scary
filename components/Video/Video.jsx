@@ -28,7 +28,7 @@ const Video = ({ videoId, isShort = false }) => {
                 width={0}
                 onError={handleError}
             />
-            <div className='rounded-3xl overflow-clip'>
+            <div className='rounded-xl overflow-clip'>
                 <LiteYouTubeEmbed
                     id={videoId}
                     playerClass="ytButton"

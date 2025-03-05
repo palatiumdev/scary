@@ -52,7 +52,7 @@ const Slider2 = ({ children, velocity, gap }) => {
   }, [velocity, duration, animation, x]);
 
   return (
-    <div className="relative overflow-hidden" style={{ width: `${children.length * gap}rem` }}>
+    <div className="relative overflow-hidden" style={{ width: `${gap}rem` }}>
       {/* Wrapping div for seamless looping */}
       <motion.div
         className="flex"

@@ -1,8 +1,5 @@
 "use client"
 import Button from '../Button/Button'
-import Contact from './Contact'
-import { FaDiscord } from "react-icons/fa6";
-import { IoIosMail } from "react-icons/io";
 
 
 const ContactText = ({ contact, contactButtonText }) => {
