@@ -7,9 +7,9 @@ export default async function Home() {
     const clientList = await fetchClientList(clientData[0]?.clients);
 
     return (
-        <div className="grid place-items-center w-full gap-8">
-            <h1 className="text-5xl text-primary grid">Clients</h1>
-            <div className="flex place-items-center place-content-center w-full gap-8 flex-wrap px-24">
+        <div className="grid place-items-center w-full gap-12 py-8">
+            <h1 className="text-5xl text-primary">Clients</h1>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl">
                 {clientList?.map((client, i) => (
                     <Client key={i} client={client} />
                 ))}
@@ -20,19 +20,20 @@ export default async function Home() {
 
 const Client = ({ client }) => {
     return (
-        <div className="my-8">
-            <div className="relative overflow-clip size-80 rounded-t-3xl">
+        <div className="flex flex-col">
+            <div className="relative overflow-hidden aspect-square rounded-t-3xl">
                 <Image
-                    src={client.profileImage}
+                    src={client.profileImage || '/placeholder-avatar.png'}
+                    alt={client.username}
                     fill={true}
-                    className="absolute object-cover"
+                    className="object-cover"
                 />
             </div>
-            <div className="bg-accent w-80 h-32 rounded-b-3xl text-center grid place-content-center">
-                <h1 className="text-3xl lg:text-4xl">{client.username}</h1>
+            <div className="bg-accent p-6 rounded-b-3xl">
+                <h1 className="text-2xl lg:text-3xl mb-2">{client.username}</h1>
                 {client.subCount && (
-                    <p className="text-2xl lg:text-3xl font-mono">
-                        {client.subCount?.toLocaleString("de-DE")} followers
+                    <p className="text-xl lg:text-2xl font-mono text-gray-300">
+                        {Number(client.subCount).toLocaleString()} followers
                     </p>
                 )}
             </div>
@@ -40,42 +41,39 @@ const Client = ({ client }) => {
     );
 };
 
-// Fetch client list function placed below the component
+// Fetch client list function with improved sorting
 async function fetchClientList(clients) {
-    let clientList = [];
+    if (!clients?.length) return [];
 
-    await Promise.all(
-        clients?.map(async (client) => {
-            let user = {
-                username: "",
-                subCount: "",
-                profileImage: "",
+    const clientList = await Promise.all(
+        clients.map(async (client) => {
+            let userData = {
+                username: client.username || "",
+                subCount: client.subCount || "0",
+                profileImage: client.profileImage || "",
             };
 
             if (client.channelId) {
-                const userData = await getCreator(client.channelId);
-                user = {
-                    username: userData.username,
-                    subCount: userData.subCount,
-                    profileImage: userData.profileImage,
-                };
+                try {
+                    const channelData = await getCreator(client.channelId);
+                    userData = {
+                        username: channelData.username || client.username,
+                        subCount: channelData.subCount || client.subCount,
+                        profileImage: channelData.profileImage || client.profileImage,
+                    };
+                } catch (error) {
+                    console.error(`Error fetching data for channel ${client.channelId}:`, error);
+                }
             }
 
-            // Case for mix and matched clients without channelId
-            if (client.username) user.username = client.username;
-            if (client.subCount) user.subCount = client.subCount;
-            if (client.profileImage) user.profileImage = client.profileImage;
-
-            clientList.push(user);
+            return userData;
         })
     );
 
-    // Sort the client list by subscriber count (descending order)
-    clientList.sort((a, b) => {
-        const aSubCount = parseFloat((a.subCount || "0").toString().replace(/\./g, "") || 0);
-        const bSubCount = parseFloat((b.subCount || "0").toString().replace(/\./g, "") || 0);
-        return bSubCount - aSubCount;
+    // Sort by subscriber count (descending)
+    return clientList.sort((a, b) => {
+        const aCount = parseInt(String(a.subCount).replace(/[^0-9]/g, "")) || 0;
+        const bCount = parseInt(String(b.subCount).replace(/[^0-9]/g, "")) || 0;
+        return bCount - aCount;
     });
-
-    return clientList;
 }

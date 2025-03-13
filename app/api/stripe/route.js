@@ -8,6 +8,8 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
 
 export async function POST() {
   try {
+    console.log('Creating checkout session with price:', process.env.STRIPE_PRICE_ID);
+    
     // Create the checkout session
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
@@ -26,14 +28,22 @@ export async function POST() {
       },
     });
 
+    console.log('Checkout session created:', session.id);
     return NextResponse.json({ sessionId: session.id });
   } catch (error) {
-    console.error("Stripe error:", error);
+    console.error("Stripe error details:", {
+      message: error.message,
+      type: error.type,
+      code: error.code,
+      param: error.param,
+      priceId: process.env.STRIPE_PRICE_ID,
+      baseUrl: process.env.NEXT_PUBLIC_BASE_URL
+    });
     
     // Handle different types of Stripe errors
     if (error instanceof Stripe.errors.StripeError) {
       return NextResponse.json(
-        { error: "Payment service error. Please try again later." },
+        { error: `Payment service error: ${error.message}` },
         { status: error.statusCode || 500 }
       );
     }

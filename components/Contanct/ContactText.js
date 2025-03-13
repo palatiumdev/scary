@@ -6,7 +6,7 @@ import { useState } from "react";
 import { BsCalendar3 } from "react-icons/bs";
 
 // Initialize Stripe with public key from environment variable
-const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLIC_KEY);
+const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY);
 
 export default function ContactText({ contact, contactButtonText }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -17,6 +17,15 @@ export default function ContactText({ contact, contactButtonText }) {
       setIsLoading(true);
       setError(null);
       
+      console.log('Initiating checkout process...');
+      console.log('Using publishable key:', process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY?.slice(0, 8) + '...');
+      
+      // Get Stripe instance early to catch initialization errors
+      const stripe = await stripePromise;
+      if (!stripe) {
+        throw new Error("Failed to initialize Stripe. Please check your publishable key.");
+      }
+      
       // Create checkout session
       const response = await fetch("/api/stripe", {
         method: "POST",
@@ -25,30 +34,45 @@ export default function ContactText({ contact, contactButtonText }) {
         },
       });
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || "Failed to create checkout session");
-      }
-
-      const { sessionId } = await response.json();
+      const data = await response.json();
       
-      // Get Stripe instance
-      const stripe = await stripePromise;
-      if (!stripe) {
-        throw new Error("Failed to initialize payment system");
+      if (!response.ok) {
+        console.error('Checkout session creation failed:', data);
+        throw new Error(data.error || "Failed to create checkout session");
       }
 
+      console.log('Checkout session created:', data.sessionId);
+      
       // Redirect to checkout
       const { error: checkoutError } = await stripe.redirectToCheckout({
-        sessionId,
+        sessionId: data.sessionId,
       });
 
       if (checkoutError) {
+        console.error('Stripe redirect error:', {
+          message: checkoutError.message,
+          type: checkoutError.type,
+          code: checkoutError.code
+        });
         throw checkoutError;
       }
     } catch (error) {
-      console.error("Checkout error:", error);
-      setError("Unable to process payment. Please try again later.");
+      console.error("Detailed checkout error:", {
+        message: error.message,
+        name: error.name,
+        stack: error.stack,
+        stripeInitialized: Boolean(await stripePromise)
+      });
+      
+      // More user-friendly error messages
+      let errorMessage = "Unable to process payment. Please try again later.";
+      if (error.message.includes("publishable key")) {
+        errorMessage = "Payment system configuration error. Please contact support.";
+      } else if (error.message.includes("session")) {
+        errorMessage = "Unable to start checkout. Please try again.";
+      }
+      
+      setError(errorMessage);
     } finally {
       setIsLoading(false);
     }
