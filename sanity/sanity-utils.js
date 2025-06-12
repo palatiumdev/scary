@@ -63,7 +63,7 @@ export async function getMetadata() {
             siteUrl,
             description,
             "embedBanner": embedBanner.asset->url
-        }`, {}, { cache: "force-cache", next: { tags: ["metadata"] } }
+        }`, {}, { next: { tags: ["metadata"] } }
     );
 }
 
